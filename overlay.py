@@ -93,11 +93,19 @@ class DisplayData:
     num_opponents:    int   = 0
     hands_beating:    int   = 0
     ev_estimate:      float = 0.0
+    spr:              float = 0.0     # Stack-to-Pot Ratio
+    spr_label:        str   = ""      # ex. "court (TP+ requis)"
+    spr_comment:      str   = ""      # conseil SPR
+    pot_odds:         float = 0.0
+    mdf:              float = 0.0
     summary:          str   = ""
     explanation:      str   = ""
     latency_ms:       float = 0.0
     is_loading:       bool  = False
     error:            str   = ""
+    # Historique des décisions de la main courante
+    hand_history:     list  = field(default_factory=list)
+    # Chaque entrée : {"stage": str, "action": str, "equity": float, "cards": list, "board": list}
 
     @classmethod
     def from_advice(cls, advice, game_state: Optional[dict] = None) -> "DisplayData":
@@ -115,6 +123,12 @@ class DisplayData:
             latency_ms      = advice.latency_ms,
             error           = advice.error,
         )
+        # SPR depuis le PokerAdvice ou l'equity_result
+        d.spr       = getattr(advice, "spr",       0.0)
+        d.spr_label = getattr(advice, "spr_label", "")
+        d.spr_comment = getattr(advice, "spr_comment", "")
+        d.pot_odds  = getattr(advice, "pot_odds",  0.0)
+        d.mdf       = getattr(advice, "mdf",       0.0)
         if game_state:
             d.stage         = game_state.get("stage", "")
             d.player_cards  = game_state.get("player_cards", [])
@@ -408,6 +422,12 @@ class PokerHUD:
         self._widgets["opp_var"] = tk.StringVar(value="—")
         self._add_stat_row(stats_frame, "ADVERS. :", "opp_var",  row=3)
 
+        self._widgets["spr_var"] = tk.StringVar(value="—")
+        self._add_stat_row(stats_frame, "SPR     :", "spr_var",  row=4)
+
+        self._widgets["mdf_var"] = tk.StringVar(value="—")
+        self._add_stat_row(stats_frame, "MDF     :", "mdf_var",  row=5)
+
         # ── Résumé Claude ────────────────────────────────────────────────
         sep2 = tk.Frame(parent, bg=THEME["border"], height=1)
         sep2.pack(fill=tk.X, pady=3)
@@ -433,6 +453,38 @@ class PokerHUD:
             bg=THEME["bg"],
             fg=THEME["text_muted"],
         ).pack(anchor=tk.E, padx=8)
+
+        # ── Historique de la main ─────────────────────────────────────────
+        sep3 = tk.Frame(parent, bg=THEME["border"], height=1)
+        sep3.pack(fill=tk.X, pady=(4, 2))
+
+        hist_header = tk.Frame(parent, bg=THEME["bg"])
+        hist_header.pack(fill=tk.X, padx=8)
+        tk.Label(
+            hist_header, text="HISTORIQUE MAIN",
+            font=self._f_label,
+            bg=THEME["bg"],
+            fg=THEME["text_dim"],
+        ).pack(side=tk.LEFT)
+
+        # Canvas pour les lignes d'historique
+        self._widgets["history_frame"] = tk.Frame(parent, bg=THEME["bg"])
+        self._widgets["history_frame"].pack(fill=tk.X, padx=6, pady=(2, 4))
+
+        # Pré-créer 5 lignes d'historique
+        self._widgets["history_labels"] = []
+        for i in range(5):
+            lbl = tk.Label(
+                self._widgets["history_frame"],
+                text="",
+                font=self._f_small,
+                bg=THEME["bg"],
+                fg=THEME["text_dim"],
+                anchor=tk.W,
+                justify=tk.LEFT,
+            )
+            lbl.pack(fill=tk.X, pady=0)
+            self._widgets["history_labels"].append(lbl)
 
     def _add_stat_row(self, parent, label: str, widget_key: str, row: int) -> None:
         frame = tk.Frame(parent, bg=THEME["bg_card"])
@@ -514,13 +566,70 @@ class PokerHUD:
             f"{d.num_opponents}" if d.num_opponents else "—"
         )
 
-        # Résumé
-        summary = d.error if d.error else (d.summary or d.explanation or "—")
-        self._widgets["summary_var"].set(summary[:160])
+        # SPR
+        if d.spr > 0:
+            spr_color = (
+                THEME["action_fold"]   if d.spr <= 1.0 else
+                THEME["action_raise"]  if d.spr <= 4.0 else
+                THEME["action_call"]   if d.spr <= 13.0 else
+                THEME["text_secondary"]
+            )
+            self._widgets["spr_var"].set(f"{d.spr:.1f}  {d.spr_label.split('(')[0].strip()}")
+            # Changer la couleur du label SPR selon la catégorie
+            for frame in self.root.winfo_children():
+                pass  # couleur gérée via le texte
+        else:
+            self._widgets["spr_var"].set("—")
+
+        # MDF
+        if d.mdf > 0:
+            self._widgets["mdf_var"].set(f"{d.mdf:.0%}  (défendre {d.mdf:.0%})")
+        else:
+            self._widgets["mdf_var"].set("—")
+
+        # SPR comment préparé pour le résumé
+
+        # Résumé (remplacé ci-dessus si SPR)
+        if d.spr > 0 and d.spr_comment and not d.is_loading and not d.error:
+            combined = d.spr_comment[:80]
+            if d.summary and d.summary != d.spr_comment:
+                combined = combined + " | " + d.summary[:60]
+        else:
+            combined = d.error if d.error else (d.summary or d.explanation or "—")
+        self._widgets["summary_var"].set(combined[:160])
 
         # Latence
         if d.latency_ms > 0:
             self._widgets["latency_var"].set(f"{d.latency_ms:.0f}ms")
+
+        # ── Historique de la main ─────────────────────────────────────────
+        labels = self._widgets.get("history_labels", [])
+        history = d.hand_history[-5:] if d.hand_history else []
+
+        for i, lbl in enumerate(labels):
+            if i < len(history):
+                entry   = history[-(i + 1)]   # plus récent en haut
+                stage   = entry.get("stage", "")[:2].upper()
+                action  = entry.get("action", "—")
+                equity  = entry.get("equity", 0.0)
+                cards   = " ".join(entry.get("cards", []))
+                board   = " ".join(entry.get("board", []))
+
+                action_color = {
+                    "FOLD":   THEME["action_fold"],
+                    "CALL":   THEME["action_call"],
+                    "RAISE":  THEME["action_raise"],
+                    "BET":    THEME["action_bet"],
+                    "ALL-IN": THEME["action_allin"],
+                    "CHECK":  THEME["action_check"],
+                }.get(action, THEME["text_dim"])
+
+                text = f"[{stage}] {action:<6} {equity:>4.0%}  {cards}"
+                if board:
+                    text += f"  |  {board}"
+                lbl.configure(text=text, fg=action_color)
+            else:
+                lbl.configure(text="", fg=THEME["text_dim"])
 
     # ------------------------------------------------------------------
     # Drag & drop

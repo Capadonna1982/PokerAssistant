@@ -39,6 +39,13 @@ class PokerAdvice:
     win_probability:      float = 0.0
     hands_beating_us:     int   = 0
     hand_class:           str   = ""
+    position:             str   = ""      # BTN / CO / HJ / MP / UTG / SB / BB
+    position_advantage:   int   = 99      # 1=meilleur, plus grand=pire
+    spr:                  float = 0.0     # Stack-to-Pot Ratio
+    spr_label:            str   = ""      # ex. "court (TP+ requis)"
+    spr_comment:          str   = ""      # conseil SPR
+    pot_odds:             float = 0.0     # % pot à payer pour caller
+    mdf:                  float = 0.0     # Minimum Defense Frequency
     action_explanation:   str   = ""
     raw_json:             dict  = field(default_factory=dict)
     latency_ms:           float = 0.0
@@ -57,8 +64,9 @@ class PokerAdvice:
             "ALL-IN": "⚡ ALL-IN",
         }.get(self.recommended_action, self.recommended_action)
 
+        pos_str = f"  [{self.position}]" if self.position else ""
         lines = [
-            f"{action_icon}",
+            f"{action_icon}{pos_str}",
             f"Equity : {self.win_probability:.0%}",
             f"Main   : {self.hand_class}",
         ]
@@ -88,7 +96,15 @@ SYSTEM_PROMPT = """Tu es un agent poker professionnel temps réel spécialisé e
   "recommended_bet_size": "",
   "hand_class": "",
   "action_explanations": "",
-  "summary": ""
+  "summary": "",
+  "position": "",
+  "position_advantage": 0,
+  "position_comment": "",
+  "spr": 0.0,
+  "spr_label": "",
+  "spr_comment": "",
+  "mdf": 0.0,
+  "pot_odds": 0.0
 }
 
 Règles :
@@ -98,7 +114,26 @@ Règles :
 - action_explanations : justification courte basée sur equity, texture du board, profil adverse
 - Ne jamais modifier la structure JSON
 - Ne jamais ajouter de texte hors du JSON
-- Intègre les données d'équité fournies pour affiner ton analyse exploitante"""
+- Intègre les données d'équité fournies pour affiner ton analyse exploitante
+- Intègre TOUJOURS la position dans tes recommandations :
+  * BTN/CO/HJ (position tardive) : range plus large, steal/squeeze possibles
+  * UTG/UTG+1/UTG+2 (position précoce) : range premium uniquement
+  * SB/BB (blindes) : pot odds et désavantage post-flop à considérer
+- Remplis les champs position, position_advantage (1=BTN meilleur, 11=BB pire)
+  et position_comment avec un conseil spécifique à la position
+- Intègre le SPR dans ta recommandation :
+  * SPR ≤ 1 : shove/fold uniquement, pas de call partiel
+  * SPR 1–4 : TP+ minimum, évite les bluffs coûteux
+  * SPR 4–13 : jeu post-flop équilibré, semi-bluff rentable
+  * SPR > 13 : spéculation et implied odds maximaux
+- Remplis spr_comment avec une phrase stratégique basée sur le SPR
+- Si des patterns de bluff ou tendances sont fournis, adapte IMMÉDIATEMENT ta recommandation :
+  * always_cbet → float le flop et steal au turn
+  * always_fold_3bet → 3-bet light en position
+  * overbet_bluff → call ses overbets plus large
+  * small_bet_value → fold sans TP+ face à petite mise
+  * check_raise_bluff → call ou re-raise ses check-raises
+- Le champ top_exploitation doit refléter le pattern le plus exploitable de la main"""
 
 
 # ---------------------------------------------------------------------------
@@ -112,6 +147,7 @@ def build_user_prompt(
 ) -> str:
     """
     Assemble le prompt utilisateur à partir de l'état du jeu et du résultat d'équité.
+    Inclut un résumé de position pour guider Claude directement.
     """
     payload = {
         "game_state":     game_state_dict,
@@ -120,8 +156,96 @@ def build_user_prompt(
     if opponent_profiles:
         payload["opponent_profiles"] = opponent_profiles
 
+    # Résumé de position en tête de prompt pour guider Claude
+    position    = game_state_dict.get("position", "")
+    pos_adv     = game_state_dict.get("position_advantage", 99)
+    is_dealer   = game_state_dict.get("is_dealer", False)
+    num_players = game_state_dict.get("num_players", 0)
+    stage       = game_state_dict.get("stage", "preflop")
+
+    pos_context = ""
+    if position:
+        pos_quality = (
+            "LATE (avantage maximal)"   if pos_adv <= 3 else
+            "MIDDLE (avantage moyen)"   if pos_adv <= 6 else
+            "EARLY (désavantage)"       if pos_adv <= 9 else
+            "BLIND (désavantage post-flop)"
+        )
+        dealer_str  = " [DEALER/BTN]" if is_dealer else ""
+        pos_context = (
+            f"\nCONTEXTE POSITION : {position}{dealer_str} — {pos_quality} "
+            f"| {num_players} joueurs | {stage.upper()}"
+            f"\nAdapte ta recommandation à cette position.\n"
+        )
+
+    # Résumé des actions adverses récentes
+    opp_actions = game_state_dict.get("opponent_actions", [])
+    action_context = ""
+    if opp_actions:
+        lines = []
+        for a in opp_actions[-6:]:   # 6 dernières actions max
+            amt = f" {a['amount']:.0f}$" if a.get("amount", 0) > 0 else ""
+            lines.append(f"Siège {a['seat']}: {a['action']}{amt}")
+        action_context = (
+            f"\nACTIONS ADVERSES RÉCENTES : " + " | ".join(lines) +
+            "\nAdapte ta recommandation en tenant compte de ces actions.\n"
+        )
+
+    # Résumé profil d'agressivité
+    agg_profile = game_state_dict.get("aggression_profile", {})
+    profile_context = ""
+    if agg_profile:
+        plines = []
+        for seat, p in list(agg_profile.items())[:4]:
+            plines.append(
+                f"S{seat}:AF={p.get('aggression_factor',0):.1f} "
+                f"VPIP≈{p.get('vpip_est',0):.0f}% PFR≈{p.get('pfr_est',0):.0f}%"
+            )
+        profile_context = "\nPROFILS ADVERSES : " + " | ".join(plines) + "\n"
+
+    # Contexte SPR
+    spr_val     = equity_result_dict.get("spr", 0.0)
+    spr_lbl     = equity_result_dict.get("spr_label", "")
+    spr_comment = equity_result_dict.get("spr_comment", "")
+    pot_odds    = equity_result_dict.get("pot_odds", 0.0)
+    mdf         = equity_result_dict.get("mdf", 0.0)
+    spr_context = ""
+    if spr_val > 0:
+        spr_context = (
+            f"\nSPR : {spr_val:.1f} — {spr_lbl}"
+            + (f" | Pot odds : {pot_odds:.0%}" if pot_odds > 0 else "")
+            + (f" | MDF : {mdf:.0%}" if mdf > 0 else "")
+            + (f"\n→ {spr_comment}" if spr_comment else "")
+            + "\n"
+        )
+
+    # Contexte patterns de bluff
+    patterns_context = ""
+    if opponent_profiles:
+        plines = []
+        for pname, prof in list(opponent_profiles.items())[:4]:
+            det_patterns = prof.get("detected_patterns", [])
+            bluff_pats   = prof.get("bluff_patterns", [])
+            top_exploit  = prof.get("top_exploitation", "")
+            if det_patterns or bluff_pats:
+                plines.append(f"\n{pname} :")
+                for p in det_patterns[:2]:
+                    plines.append(f"  [{p.get('pattern','')}] {p.get('description','')} ({p.get('frequency',0):.0%})")
+                    plines.append(f"  → {p.get('exploitation','')}")
+                for bp in bluff_pats[:2]:
+                    plines.append(f"  [bluff] {bp}")
+                if top_exploit:
+                    plines.append(f"  [ACTION] {top_exploit}")
+        if plines:
+            patterns_context = "\nPATTERNS ADVERSES DÉTECTÉS :" + "\n".join(plines) + "\n"
+
     return (
-        "Voici l'état actuel de la main. Analyse et retourne ta recommandation en JSON :\n\n"
+        pos_context
+        + spr_context
+        + patterns_context
+        + action_context
+        + profile_context
+        + "\nVoici l'état actuel de la main. Analyse et retourne ta recommandation en JSON :\n\n"
         + json.dumps(payload, ensure_ascii=False, indent=2)
     )
 
@@ -290,6 +414,13 @@ class ClaudePokerClient:
             win_probability    = float(data.get("estimated_win_probability", 0.0)),
             hands_beating_us   = int(data.get("hands_that_beat_us", 0)),
             hand_class         = data.get("hand_class", ""),
+            position           = data.get("position", ""),
+            position_advantage = int(data.get("position_advantage", 99)),
+            spr                = float(data.get("spr", 0.0)),
+            spr_label          = data.get("spr_label", ""),
+            spr_comment        = data.get("spr_comment", ""),
+            pot_odds           = float(data.get("pot_odds", 0.0)),
+            mdf                = float(data.get("mdf", 0.0)),
             action_explanation = data.get("action_explanations", ""),
             raw_json           = data,
             latency_ms         = latency_ms,

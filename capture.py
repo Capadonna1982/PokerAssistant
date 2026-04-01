@@ -3,6 +3,10 @@ capture.py — Module de capture d'écran et OCR pour l'assistant poker PokerSta
 Dépendances : mss, Pillow, pytesseract, opencv-python, numpy
 Installation  : pip install mss Pillow pytesseract opencv-python numpy
                + Tesseract OCR : https://github.com/UB-Mannheim/tesseract/wiki
+
+Détection des cartes :
+  - Si card_detector.py est présent → HybridCardExtractor (templates OpenCV, ~99%)
+  - Sinon → fallback OCR Tesseract (~70%)
 """
 
 import re
@@ -20,6 +24,28 @@ import pytesseract
 from PIL import Image, ImageEnhance, ImageFilter
 
 # ---------------------------------------------------------------------------
+# Import optionnel du detecteur de cartes par templates OpenCV
+# ---------------------------------------------------------------------------
+try:
+    from card_detector import HybridCardExtractor as _HybridExtractor
+    _card_extractor = _HybridExtractor()
+    _USE_TEMPLATES  = True
+    import logging as _log_tmp
+    _log_tmp.getLogger(__name__).info("card_detector.py detecte - templates actives (~99%)")
+except ImportError:
+    _card_extractor = None
+    _USE_TEMPLATES  = False
+
+# ---------------------------------------------------------------------------
+# Import optionnel du detecteur d'actions adverses
+# ---------------------------------------------------------------------------
+try:
+    from action_detector import OpponentActionDetector, OpponentAction, Action
+    _USE_ACTION_DETECTOR = True
+except ImportError:
+    _USE_ACTION_DETECTOR = False
+
+# ---------------------------------------------------------------------------
 # Configuration du logger
 # ---------------------------------------------------------------------------
 logging.basicConfig(
@@ -32,7 +58,7 @@ log = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # Chemin vers tesseract (Windows — adapter si Linux/macOS)
 # ---------------------------------------------------------------------------
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 
 # ---------------------------------------------------------------------------
@@ -40,6 +66,43 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 # ---------------------------------------------------------------------------
 SUITS = {"s": "♠", "h": "♥", "d": "♦", "c": "♣"}
 RANKS = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]
+
+# ---------------------------------------------------------------------------
+# Positions poker (dans l'ordre d'action préflop)
+# ---------------------------------------------------------------------------
+# Positions absolues (nom affiché sur la table)
+POSITION_LABELS = ["BTN", "SB", "BB", "UTG", "UTG+1", "UTG+2",
+                   "MP", "MP+1", "MP+2", "HJ", "CO"]
+
+# Position → avantage relatif (1 = meilleur, plus grand = pire)
+POSITION_ADVANTAGE = {
+    "BTN":   1,   # bouton = meilleur
+    "CO":    2,   # cutoff
+    "HJ":    3,   # hijack
+    "MP+2":  4,
+    "MP+1":  5,
+    "MP":    6,
+    "UTG+2": 7,
+    "UTG+1": 8,
+    "UTG":   9,   # under the gun = pire en cash
+    "SB":    10,  # small blind
+    "BB":    11,  # big blind
+}
+
+# Texte OCR → nom normalisé (variantes PokerStars)
+POSITION_OCR_MAP = {
+    "btn":   "BTN", "button": "BTN", "dealer": "BTN",
+    "sb":    "SB",  "small":  "SB",  "small blind": "SB",
+    "bb":    "BB",  "big":    "BB",  "big blind":   "BB",
+    "utg":   "UTG", "under":  "UTG",
+    "utg+1": "UTG+1", "utg1": "UTG+1",
+    "utg+2": "UTG+2", "utg2": "UTG+2",
+    "mp":    "MP",  "middle": "MP",
+    "mp+1":  "MP+1", "mp1":  "MP+1",
+    "mp+2":  "MP+2", "mp2":  "MP+2",
+    "hj":    "HJ",  "hijack": "HJ",
+    "co":    "CO",  "cutoff": "CO",
+}
 
 @dataclass
 class GameState:
@@ -50,20 +113,41 @@ class GameState:
     player_stack: float              = 0.0
     current_bet:  float              = 0.0
     num_players:  int                = 0
-    stage:        str                = "preflop"                      # preflop/flop/turn/river
+    stage:           str               = "preflop"   # preflop/flop/turn/river
+    position:        str               = ""          # BTN / SB / BB / UTG / CO / HJ / MP…
+    position_index:  int               = -1          # siège du joueur (0 = bas-centre)
+    is_dealer:       bool              = False        # a le bouton dealer ?
+    position_advantage: int            = 99          # 1=meilleur(BTN), plus grand=pire
+    opponent_actions:   list          = field(default_factory=list)  # actions adverses détectées
+    aggression_profile: dict          = field(default_factory=dict)  # profil par siège
     raw_screenshot: Optional[np.ndarray] = field(default=None, repr=False)
     timestamp:    float              = field(default_factory=time.time)
 
     def to_dict(self) -> dict:
         return {
-            "player_cards": self.player_cards,
-            "board_cards":  self.board_cards,
-            "pot":          self.pot,
-            "player_stack": self.player_stack,
-            "current_bet":  self.current_bet,
-            "num_players":  self.num_players,
-            "stage":        self.stage,
-            "timestamp":    self.timestamp,
+            "player_cards":       self.player_cards,
+            "board_cards":        self.board_cards,
+            "pot":                self.pot,
+            "player_stack":       self.player_stack,
+            "current_bet":        self.current_bet,
+            "num_players":        self.num_players,
+            "stage":              self.stage,
+            "position":           self.position,
+            "position_index":     self.position_index,
+            "is_dealer":          self.is_dealer,
+            "position_advantage": self.position_advantage,
+            "opponent_actions": [
+                {
+                    "seat":   a.seat,
+                    "action": a.action if isinstance(a.action, str) else a.action.value,
+                    "amount": a.amount,
+                    "conf":   round(a.confidence, 2),
+                    "method": a.method,
+                }
+                for a in self.opponent_actions
+            ],
+            "aggression_profile": self.aggression_profile,
+            "timestamp":          self.timestamp,
         }
 
 
@@ -93,6 +177,9 @@ DEFAULT_REGIONS = {
 
     # Zone des sièges occupés (pour compter les joueurs)
     "seats":        {"top": 100,  "left": 100,  "width": 1720, "height": 800},
+
+    # Zone du journal d'actions (coin haut-gauche sur PokerStars)
+    "action_log":   {"top": 20,   "left": 20,   "width": 380,  "height": 300},
 }
 
 CONFIG_PATH = Path(__file__).parent / "config.json"
@@ -299,6 +386,158 @@ def extract_num_players(img_bgr: np.ndarray) -> int:
 
 
 # ---------------------------------------------------------------------------
+# Détection de position (BTN, SB, BB, UTG, CO, HJ, MP…)
+# ---------------------------------------------------------------------------
+
+def detect_position_by_ocr(img_bgr: np.ndarray) -> str:
+    """
+    Tente de lire la position directement par OCR sur l'image de la table.
+    PokerStars affiche souvent "BTN", "SB", "BB" sur le siège du joueur.
+    Retourne la position normalisée ou "" si non détectée.
+    """
+    try:
+        text = ocr_text(
+            img_bgr,
+            config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+0123456789 "
+        ).strip().lower()
+        for raw, normalized in POSITION_OCR_MAP.items():
+            if raw in text:
+                return normalized
+    except Exception as e:
+        log.debug(f"OCR position échoué : {e}")
+    return ""
+
+
+def detect_dealer_button(img_bgr: np.ndarray) -> tuple[bool, tuple]:
+    """
+    Détecte le bouton dealer (disque blanc/jaune D) par couleur et forme.
+    Retourne (trouvé, (x, y)) en coordonnées dans l'image.
+    PokerStars affiche un petit disque blanc avec "D" au centre.
+    """
+    hsv = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2HSV)
+
+    # Bouton dealer : blanc brillant ou jaune/doré
+    mask_white  = cv2.inRange(hsv, np.array([0,   0,   220]),
+                                   np.array([180, 40,  255]))
+    mask_yellow = cv2.inRange(hsv, np.array([20,  80,  150]),
+                                   np.array([40,  255, 255]))
+    mask = cv2.bitwise_or(mask_white, mask_yellow)
+
+    # Chercher des cercles (le bouton dealer est rond)
+    mask_blur = cv2.GaussianBlur(mask, (7, 7), 2)
+    circles   = cv2.HoughCircles(
+        mask_blur, cv2.HOUGH_GRADIENT,
+        dp=1, minDist=30,
+        param1=30, param2=15,
+        minRadius=8, maxRadius=25,
+    )
+    if circles is not None:
+        cx, cy, r = circles[0][0]
+        log.debug(f"Bouton dealer détecté en ({cx:.0f}, {cy:.0f}) r={r:.0f}")
+        return True, (int(cx), int(cy))
+    return False, (0, 0)
+
+
+def estimate_position_from_seat(
+    dealer_xy: tuple,
+    player_xy: tuple,
+    num_players: int,
+    table_center: tuple,
+) -> str:
+    """
+    Estime la position du joueur à partir de la position angulaire du dealer
+    et du joueur autour du centre de la table.
+
+    dealer_xy    : (x, y) du bouton dealer dans l'image
+    player_xy    : (x, y) du siège du joueur (généralement bas-centre)
+    num_players  : nombre de joueurs actifs
+    table_center : (cx, cy) centre estimé de la table
+
+    Retourne une position normalisée : BTN / SB / BB / UTG / CO / HJ / MP
+    """
+    import math
+
+    cx, cy = table_center
+    dx, dy = dealer_xy
+    px, py = player_xy
+
+    # Angle du dealer et du joueur par rapport au centre (en degrés)
+    dealer_angle = math.degrees(math.atan2(dy - cy, dx - cx)) % 360
+    player_angle = math.degrees(math.atan2(py - cy, px - cx)) % 360
+
+    # Différence angulaire → nombre de sièges entre dealer et joueur
+    diff = (player_angle - dealer_angle) % 360
+    seats_from_dealer = round(diff / (360 / max(num_players, 2)))
+    seats_from_dealer = seats_from_dealer % num_players
+
+    # Mapping sièges → positions selon nombre de joueurs
+    position_maps = {
+        2:  ["BTN",  "BB"],
+        3:  ["BTN",  "SB",  "BB"],
+        4:  ["BTN",  "SB",  "BB",   "UTG"],
+        5:  ["BTN",  "SB",  "BB",   "UTG",  "CO"],
+        6:  ["BTN",  "SB",  "BB",   "UTG",  "MP",   "CO"],
+        7:  ["BTN",  "SB",  "BB",   "UTG",  "MP",   "HJ",   "CO"],
+        8:  ["BTN",  "SB",  "BB",   "UTG",  "UTG+1","MP",   "HJ",   "CO"],
+        9:  ["BTN",  "SB",  "BB",   "UTG",  "UTG+1","MP",   "MP+1", "HJ",   "CO"],
+        10: ["BTN",  "SB",  "BB",   "UTG",  "UTG+1","UTG+2","MP",   "MP+1", "HJ",   "CO"],
+    }
+    pos_map = position_maps.get(num_players, position_maps[9])
+    idx     = min(seats_from_dealer, len(pos_map) - 1)
+    return pos_map[idx]
+
+
+def detect_position(
+    img_bgr: np.ndarray,
+    num_players: int = 8,
+    player_seat_xy: Optional[tuple] = None,
+) -> tuple[str, bool]:
+    """
+    Détecte la position du joueur par une approche en cascade :
+
+    1. OCR direct sur la zone siège (si le label est visible)
+    2. Détection du bouton dealer + calcul angulaire
+    3. Estimation heuristique selon le nombre de joueurs
+
+    Retourne (position, is_dealer).
+    """
+    h, w = img_bgr.shape[:2]
+    table_center = (w // 2, h // 2)
+
+    # ── Stratégie 1 : OCR de la zone siège joueur (bas-centre) ──────────────
+    player_zone = img_bgr[int(h * 0.75):h, int(w * 0.35):int(w * 0.65)]
+    pos_ocr = detect_position_by_ocr(player_zone)
+    if pos_ocr:
+        log.info(f"Position détectée par OCR : {pos_ocr}")
+        return pos_ocr, pos_ocr == "BTN"
+
+    # ── Stratégie 2 : Bouton dealer + géométrie ──────────────────────────────
+    found, dealer_xy = detect_dealer_button(img_bgr)
+    if found:
+        # Le joueur est toujours en bas-centre de l'écran
+        if player_seat_xy is None:
+            player_seat_xy = (w // 2, int(h * 0.88))
+
+        is_dealer = (
+            abs(dealer_xy[0] - player_seat_xy[0]) < w * 0.12 and
+            abs(dealer_xy[1] - player_seat_xy[1]) < h * 0.10
+        )
+        if is_dealer:
+            log.info("Position détectée : BTN (bouton dealer sur le siège joueur)")
+            return "BTN", True
+
+        pos = estimate_position_from_seat(
+            dealer_xy, player_seat_xy, num_players, table_center
+        )
+        log.info(f"Position estimée par géométrie : {pos}")
+        return pos, False
+
+    # ── Stratégie 3 : Heuristique basée sur les blindes détectées ───────────
+    log.debug("Position non détectée — estimation par défaut")
+    return "", False
+
+
+# ---------------------------------------------------------------------------
 # Détection du stage (preflop / flop / turn / river)
 # ---------------------------------------------------------------------------
 
@@ -332,6 +571,13 @@ class PokerExtractor:
         self.debug    = debug
         self._prev_state: Optional[GameState] = None
 
+        # Détecteur d'actions adverses (si disponible)
+        if _USE_ACTION_DETECTOR:
+            self._action_detector = OpponentActionDetector()
+            log.info("Détecteur d'actions adverses activé")
+        else:
+            self._action_detector = None
+
     def extract(self) -> GameState:
         """
         Capture et analyse l'état complet de la table.
@@ -344,9 +590,13 @@ class PokerExtractor:
             img = self.capture.capture_region("player_cards")
             if self.debug:
                 self.capture.save_debug(img, "debug_player_cards.png")
-            text = ocr_text(img)
-            state.player_cards = extract_cards_from_text(text)
-            log.info(f"Cartes joueur : {state.player_cards}")
+            if _USE_TEMPLATES and _card_extractor:
+                state.player_cards = _card_extractor.extract(img, max_cards=2)
+                log.info(f"Cartes joueur (templates) : {state.player_cards}")
+            else:
+                text = ocr_text(img)
+                state.player_cards = extract_cards_from_text(text)
+                log.info(f"Cartes joueur (OCR) : {state.player_cards}")
         except Exception as e:
             log.error(f"Erreur capture cartes joueur : {e}")
 
@@ -355,9 +605,13 @@ class PokerExtractor:
             img = self.capture.capture_region("board")
             if self.debug:
                 self.capture.save_debug(img, "debug_board.png")
-            text = ocr_text(img)
-            state.board_cards = extract_cards_from_text(text)
-            log.info(f"Board : {state.board_cards}")
+            if _USE_TEMPLATES and _card_extractor:
+                state.board_cards = _card_extractor.extract(img, max_cards=5)
+                log.info(f"Board (templates) : {state.board_cards}")
+            else:
+                text = ocr_text(img)
+                state.board_cards = extract_cards_from_text(text)
+                log.info(f"Board (OCR) : {state.board_cards}")
         except Exception as e:
             log.error(f"Erreur capture board : {e}")
 
@@ -399,6 +653,48 @@ class PokerExtractor:
         # --- Stage ---
         state.stage = detect_stage(state.board_cards)
 
+        # --- Position du joueur ---
+        try:
+            table_img = self.capture.capture_table()
+            h, w      = table_img.shape[:2]
+            pos, is_dealer = detect_position(
+                table_img,
+                num_players    = max(state.num_players, 2),
+                player_seat_xy = (w // 2, int(h * 0.88)),
+            )
+            state.position     = pos
+            state.is_dealer    = is_dealer
+            state.position_advantage = POSITION_ADVANTAGE.get(pos, 99)
+            if pos:
+                log.info(
+                    f"Position : {pos} | Dealer : {is_dealer} | "
+                    f"Avantage : {state.position_advantage}"
+                )
+        except Exception as e:
+            log.error(f"Erreur détection position : {e}")
+
+        # --- Actions adverses ---
+        if self._action_detector is not None:
+            try:
+                table_img = self.capture.capture_table()
+                opp_actions = self._action_detector.detect(
+                    frame = table_img,
+                    pot   = state.pot,
+                    stage = state.stage,
+                )
+                state.opponent_actions   = opp_actions
+                state.aggression_profile = self._action_detector.get_aggression_profile()
+                if opp_actions:
+                    log.info(
+                        f"Actions adverses : " +
+                        " | ".join(
+                            f"S{a.seat}={a.action.value if hasattr(a.action,'value') else a.action}"
+                            for a in opp_actions
+                        )
+                    )
+            except Exception as e:
+                log.error(f"Erreur détection actions adverses : {e}")
+
         self._prev_state = state
         return state
 
@@ -407,11 +703,20 @@ class PokerExtractor:
         if self._prev_state is None:
             return True
         return (
-            new_state.player_cards != self._prev_state.player_cards
-            or new_state.board_cards  != self._prev_state.board_cards
-            or new_state.pot          != self._prev_state.pot
-            or new_state.current_bet  != self._prev_state.current_bet
+            new_state.player_cards     != self._prev_state.player_cards
+            or new_state.board_cards   != self._prev_state.board_cards
+            or new_state.pot           != self._prev_state.pot
+            or new_state.current_bet   != self._prev_state.current_bet
+            or new_state.position      != self._prev_state.position
+            or bool(new_state.opponent_actions)
         )
+
+    def new_hand(self) -> None:
+        """Réinitialise le contexte pour une nouvelle main."""
+        self._prev_state = None
+        if self._action_detector is not None:
+            self._action_detector.new_hand()
+        log.info("PokerExtractor réinitialisé — nouvelle main.")
 
 
 # ---------------------------------------------------------------------------
@@ -453,33 +758,17 @@ def run_capture_loop(interval: float = 1.5, debug: bool = False):
 
 def calibrate_regions():
     """
-    Capture la table entière et affiche une fenêtre interactive pour
-    délimiter les régions manuellement (sauvegarde dans config.json).
+    Lance hud_calibrator.py pour calibrer les régions visuellement.
+    Si hud_calibrator.py n'est pas disponible, affiche les instructions.
     """
-    cap = ScreenCapture()
-    table_img = cap.capture_table()
-
-    regions = {}
-    current_region = {"name": None}
-
-    def on_select(event, x, y, flags, param):
-        pass  # Implémentation ROI interactive si besoin
-
-    print("=== Calibration ===")
-    print("Appuyez sur 'q' pour quitter, 's' pour sauvegarder les régions.")
-    cv2.imshow("Table PokerStars — Calibration", table_img)
-
-    while True:
-        key = cv2.waitKey(1) & 0xFF
-        if key == ord("q"):
-            break
-        elif key == ord("s"):
-            with open(CONFIG_PATH, "w") as f:
-                json.dump({"regions": DEFAULT_REGIONS}, f, indent=2)
-            print(f"Régions sauvegardées dans {CONFIG_PATH}")
-            break
-
-    cv2.destroyAllWindows()
+    try:
+        from hud_calibrator import run_calibrator
+        log.info("Lancement du calibrateur visuel...")
+        run_calibrator()
+    except ImportError:
+        log.warning("hud_calibrator.py non trouvé.")
+        print("Pour calibrer les régions, lancez : python hud_calibrator.py")
+        print(f"Ou modifiez manuellement {CONFIG_PATH}")
 
 
 # ---------------------------------------------------------------------------

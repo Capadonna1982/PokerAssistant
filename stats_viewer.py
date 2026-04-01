@@ -19,7 +19,18 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-from tracker import PokerTracker, DB_PATH
+from tracker     import PokerTracker, DB_PATH
+try:
+    from leak_finder import add_leak_tab_to_viewer
+    _HAS_LEAK_FINDER = True
+except ImportError:
+    _HAS_LEAK_FINDER = False
+
+try:
+    from hand_replay import add_replay_tab_to_viewer
+    _HAS_REPLAY = True
+except ImportError:
+    _HAS_REPLAY = False
 
 log = logging.getLogger(__name__)
 
@@ -189,6 +200,14 @@ class StatsViewer:
         self._build_sessions()
         self._build_performance()
         self._build_entry()
+
+        # Onglet Leaks (si disponible)
+        if _HAS_LEAK_FINDER:
+            add_leak_tab_to_viewer(self, self.tracker)
+
+        # Onglet Replay (si disponible)
+        if _HAS_REPLAY:
+            add_replay_tab_to_viewer(self, self.tracker)
 
     # ------------------------------------------------------------------
     # Onglet 1 — Vue d'ensemble

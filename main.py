@@ -41,8 +41,15 @@ try:
     from engine        import PokerEngine, EquityResult
     from claude_client import CachedClaudeClient, PokerAdvice
     from overlay       import PokerHUD, HUDThread, DisplayData, ACTION_COLORS
-    from tracker       import PokerTracker, HandRecord
-    from stats_viewer  import StatsViewer
+    from tracker        import PokerTracker, HandRecord
+    from stats_viewer   import StatsViewer
+    from card_detector  import HybridCardExtractor as _HybridExtractor
+    from hh_parser      import start_hh_watcher, find_hh_folder
+    from profil_builder import ProfilBuilder, ProfileDatabase, build_opponent_profiles_context
+    from bluff_detector import PatternEngine, update_engine_from_game_state
+    from alerts         import create_alert_manager, AlertManager
+    from rapport_pdf    import generate_session_report_async
+    from hand_replay    import HandReplayViewer
 except ImportError as e:
     log.critical(f"Module manquant : {e}")
     log.critical("Vérifiez que tous les modules .py sont dans le même dossier.")
@@ -100,6 +107,9 @@ class PokerAssistant:
         buy_in:            float = 0.0,
         game_type:         str   = "Tournoi",
         num_players:       int   = 8,
+        hero_name:         str   = "",
+        hh_folder:         str   = "",
+        import_hh:         bool  = False,
     ):
         self.capture_interval = capture_interval
         self.debug_capture    = debug_capture
@@ -111,7 +121,12 @@ class PokerAssistant:
 
         # Module 1 — Capture
         self.extractor = PokerExtractor(debug=debug_capture)
-        log.info("  ✓ capture.py        — PokerExtractor prêt")
+        # Vérifier si la détection par templates est active
+        try:
+            from card_detector import HybridCardExtractor
+            log.info("  ✓ capture.py        — PokerExtractor prêt (templates OpenCV actifs)")
+        except ImportError:
+            log.info("  ✓ capture.py        — PokerExtractor prêt (OCR Tesseract)")
 
         # Module 2 — Engine
         self.engine = PokerEngine(simulations=simulations)
@@ -134,10 +149,60 @@ class PokerAssistant:
         )
         log.info(f"  ✓ tracker.py        — Session #{self.session_id} démarrée (buy-in={buy_in}$)")
 
+        # Module 6 — Surveillance Hand History
+        self._hh_watcher = None
+        self._hero_name  = hero_name
+        self._hh_folder  = hh_folder
+
+        # Import HH existant au démarrage si demandé
+        if import_hh:
+            try:
+                from hh_parser import HandHistoryImporter, find_hh_folder
+                from pathlib import Path
+                hh_path = Path(hh_folder) if hh_folder else find_hh_folder()
+                if hh_path:
+                    imp = HandHistoryImporter(self.tracker, hero_name=hero_name)
+                    n   = imp.import_folder(hh_path)
+                    log.info(f"  ✓ hh_parser.py — {n} mains importées depuis {hh_path}")
+                else:
+                    log.warning("Import HH : dossier non trouvé.")
+            except Exception as e:
+                log.warning(f"Import HH initial échoué : {e}")
+
+        # Module 7 — ProfilBuilder adverses
+        try:
+            self.profil_db      = ProfileDatabase()
+            self.profil_builder = ProfilBuilder(self.profil_db)
+            log.info("  ✓ profil_builder.py — ProfilBuilder prêt")
+        except Exception as e:
+            self.profil_builder = None
+            log.warning(f"ProfilBuilder non disponible : {e}")
+
+        # Module 8 — PatternEngine (bluff + tendances)
+        try:
+            self.pattern_engine = PatternEngine(
+                api_key        = api_key,
+                profil_builder = self.profil_builder,
+            )
+            log.info("  ✓ bluff_detector.py — PatternEngine prêt")
+        except Exception as e:
+            self.pattern_engine = None
+            log.warning(f"PatternEngine non disponible : {e}")
+
+        # Module 9 — Alertes sonores
+        try:
+            self.alerter = create_alert_manager(enabled=True, volume=0.7)
+            log.info("  ✓ alerts.py         — AlertManager prêt")
+        except Exception as e:
+            self.alerter = None
+            log.warning(f"AlertManager non disponible : {e}")
+
         # État de la main en cours
         self._current_hand_id:    int   = 0
         self._current_hand_cards: list  = []
         self._hand_result:        float = 0.0
+        # Historique des décisions de la main courante (max 10 entrées)
+        self._hand_history:       list  = []
 
         # Statistiques de session en mémoire
         self._stats = {
@@ -164,6 +229,21 @@ class PokerAssistant:
 
         log.info("HUD démarré. En attente de la table PokerStars…")
         log.info("Raccourcis HUD  : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité")
+
+        # Démarrer la surveillance Hand History (tourne en arrière-plan)
+        try:
+            from hh_parser import start_hh_watcher, find_hh_folder
+            from pathlib import Path
+            hh_path = Path(self._hh_folder) if hasattr(self, "_hh_folder") and self._hh_folder else None
+            self._hh_watcher = start_hh_watcher(
+                self.tracker,
+                hero_name = self._hero_name,
+                hh_folder = hh_path,
+            )
+            if self._hh_watcher:
+                log.info("  ✓ hh_parser.py — Surveillance Hand History active")
+        except Exception as e:
+            log.warning(f"Surveillance HH non démarrée : {e}")
         log.info("Console         : tapez 'n' + Entrée = nouvelle main")
         log.info("                  tapez 'end' + Entrée = clôturer la session")
         log.info("                  tapez 'stats' + Entrée = ouvrir le dashboard")
@@ -243,10 +323,28 @@ class PokerAssistant:
             return
 
         # ── Étape 2 : Claude API ──────────────────────────────────────
+
+        # Construire les profils adverses pour Claude
+        opponent_profiles = None
+        if self.profil_builder:
+            try:
+                all_names = getattr(state, "player_names", [])
+                if all_names:
+                    if self.pattern_engine:
+                        # Profils enrichis avec patterns de bluff
+                        opponent_profiles = self.pattern_engine.get_structured_profiles(all_names)
+                    else:
+                        opponent_profiles = build_opponent_profiles_context(
+                            self.profil_builder, all_names, hero_name=self._hero_name,
+                        )
+            except Exception as e:
+                log.debug(f"Profils adverses indisponibles : {e}")
+
         try:
             advice = self.claude.get_advice(
-                game_state    = state.to_dict(),
-                equity_result = result.to_dict(),
+                game_state        = state.to_dict(),
+                equity_result     = result.to_dict(),
+                opponent_profiles = opponent_profiles,
             )
             self._stats["api_calls"] += 1
 
@@ -263,14 +361,66 @@ class PokerAssistant:
 
         # ── Étape 3 : Mise à jour HUD ─────────────────────────────────
         display = DisplayData.from_advice(advice, state.to_dict())
-        self.hud_thread.hud.update_async(display)
 
         log.info(
             f"HUD mis à jour → {advice.recommended_action} | "
             f"latence={advice.latency_ms:.0f}ms"
         )
 
-        # ── Étape 4 : Enregistrement tracker ──────────────────────────
+        # Enregistrer dans l'historique de la main
+        self._hand_history.append({
+            "stage":  state.stage,
+            "action": advice.recommended_action or "—",
+            "equity": result.win_probability,
+            "cards":  state.player_cards,
+            "board":  state.board_cards,
+            "sizing": advice.recommended_sizing,
+            "spr":    result.spr,
+        })
+        if len(self._hand_history) > 10:
+            self._hand_history = self._hand_history[-10:]
+
+        # Injecter l'historique dans le DisplayData
+        display.hand_history = list(self._hand_history)
+        self.hud_thread.hud.update_async(display)
+
+        # Alerte sonore selon le conseil
+        if self.alerter:
+            try:
+                self.alerter.on_advice(advice, result)
+                self.alerter.on_spr(result.spr)
+            except Exception as e:
+                log.debug(f"Alerte sonore : {e}")
+
+        # ── Étape 4 : Mise à jour profils + patterns adverses ───────────
+        if self.profil_builder and state.opponent_actions:
+            try:
+                for action in state.opponent_actions:
+                    seat_name = f"Seat_{action.seat}"
+                    act_str = action.action.value if hasattr(action.action, "value") else str(action.action)
+                    self.profil_builder.update_realtime(
+                        player_name=seat_name, action=act_str,
+                        amount=action.amount, stage=state.stage,
+                    )
+            except Exception as e:
+                log.debug(f"Profils RT : {e}")
+
+        if self.pattern_engine:
+            try:
+                update_engine_from_game_state(self.pattern_engine, state, self._hero_name)
+            except Exception as e:
+                log.debug(f"PatternEngine RT : {e}")
+
+        # Alertes actions adverses
+        if self.alerter and state.opponent_actions:
+            try:
+                for action in state.opponent_actions:
+                    act_str = action.action.value if hasattr(action.action, "value") else str(action.action)
+                    self.alerter.on_opponent_action(act_str, action.amount, state.pot)
+            except Exception as e:
+                log.debug(f"Alerte adverse : {e}")
+
+        # ── Étape 5 : Enregistrement tracker ──────────────────────────
         self._record_to_tracker(state, result, advice)
 
     # ------------------------------------------------------------------
@@ -282,8 +432,11 @@ class PokerAssistant:
         self.claude.new_hand()
         self._current_hand_id    = 0
         self._current_hand_cards = []
+        self._hand_history       = []   # effacer l'historique
         self._stats["hands"] += 1
         log.info(f"Nouvelle main #{self._stats['hands']} — contexte réinitialisé.")
+        if self.alerter:
+            self.alerter.on_new_hand()
         self._show_waiting()
 
     # ------------------------------------------------------------------
@@ -345,6 +498,8 @@ class PokerAssistant:
 
     def _close_session(self) -> None:
         """Demande le résultat final et clôture la session dans la BD."""
+        if self._hh_watcher:
+            self._hh_watcher.stop()
         print("\n" + "=" * 50)
         print("  CLÔTURE DE SESSION")
         print("=" * 50)
@@ -359,6 +514,22 @@ class PokerAssistant:
             placement   = placement,
             prize       = prize,
         )
+
+        # Sauvegarder les profils adverses
+        if self.profil_builder:
+            try:
+                self.profil_builder.end_hand_realtime()
+                log.info("Profils adverses sauvegardés.")
+            except Exception as e:
+                log.warning(f"Sauvegarde profils : {e}")
+
+        # Générer le rapport PDF de session
+        try:
+            pdf_path = generate_session_report_async(self.tracker, self.session_id)
+            if pdf_path:
+                print(f"\n  Rapport PDF sauvegardé : {pdf_path}")
+        except Exception as e:
+            log.warning(f"Rapport PDF : {e}")
         profit = prize - self.buy_in
         log.info(
             f"Session #{self.session_id} clôturée — "
@@ -390,8 +561,69 @@ class PokerAssistant:
                         target=lambda: StatsViewer(self.tracker).run(),
                         daemon=True,
                     ).start()
+                elif cmd == "pdf":
+                    try:
+                        pdf_path = generate_session_report_async(
+                            self.tracker, self.session_id
+                        )
+                        if pdf_path:
+                            print(f"  Rapport PDF : {pdf_path}")
+                    except Exception as e:
+                        print(f"  Erreur PDF : {e}")
+                elif cmd == "replay":
+                    threading.Thread(
+                        target=lambda: HandReplayViewer(
+                            self.tracker,
+                            session_id=self.session_id
+                        ).run(),
+                        daemon=True,
+                    ).start()
+                elif cmd.startswith("p ") or cmd.startswith("profil "):
+                    # Afficher le profil d'un adversaire : "p Villain42"
+                    name = cmd.split(" ", 1)[1].strip()
+                    if self.profil_builder:
+                        p = self.profil_builder.get_profile(name)
+                        from profil_builder import print_profile
+                        print_profile(p)
+                    else:
+                        print("  ProfilBuilder non disponible.")
+                elif cmd.startswith("patterns ") or cmd.startswith("pat "):
+                    name = cmd.split(" ", 1)[1].strip()
+                    if self.pattern_engine:
+                        report = self.pattern_engine.get_tendency_report(name)
+                        print(f"\n  Patterns pour {name} :")
+                        for p in report.patterns:
+                            status = "✓" if p.is_reliable else "~"
+                            print(f"  {status} {p.description}")
+                            print(f"    → {p.exploitation}")
+                        if report.top_exploitation:
+                            print(f"\n  [ACTION] {report.top_exploitation}")
+                    else:
+                        print("  PatternEngine non disponible.")
+                elif cmd == "top":
+                    if self.profil_builder:
+                        profiles = self.profil_builder.top_players(10)
+                        header = f"  {'Nom':<18} {'Mains':>5} {'VPIP':>5} {'PFR':>5} {'AF':>5} Tendance"
+                        print("")
+                        print(header)
+                        for p in profiles:
+                            row = f"  {p.name:<18} {p.hands_total:>5} {p.vpip:>4.0f}% {p.pfr:>4.0f}% {p.af:>5.1f} {p.tendency}"
+                            print(row)
+                elif cmd == "sound on":
+                    if self.alerter:
+                        self.alerter.set_enabled(True)
+                        print("  Alertes sonores activées.")
+                elif cmd == "sound off":
+                    if self.alerter:
+                        self.alerter.set_enabled(False)
+                        print("  Alertes sonores désactivées.")
+                elif cmd == "sound test":
+                    if self.alerter:
+                        threading.Thread(target=self.alerter.test_all, daemon=True).start()
                 else:
-                    print("  Commandes : 'n' = nouvelle main | 'end' = quitter | 'stats' = dashboard")
+                    print("  Commandes : 'n'=nouvelle main | 'end'=quitter | 'stats'=dashboard")
+                    print("              'p NOM'=profil | 'top'=top 10 | 'pdf'=rapport PDF | 'replay'=rejouer mains")
+                    print("              'sound on/off/test'=alertes | 'patterns NOM'=bluff patterns")
             except EOFError:
                 break
             except Exception as e:
@@ -582,6 +814,16 @@ def parse_args() -> argparse.Namespace:
                    help="Clé API Anthropic (sinon utilise ANTHROPIC_API_KEY)")
     p.add_argument("--verbose",     action="store_true",
                    help="Active les logs DEBUG")
+    p.add_argument("--calibrate",   action="store_true",
+                   help="Lancer le calibrateur visuel de régions (hud_calibrator.py)")
+    p.add_argument("--gen-templates", action="store_true",
+                   help="Générer les templates de détection de cartes")
+    p.add_argument("--hero",          type=str, default="",
+                   help="Pseudo PokerStars du joueur (pour import Hand History)")
+    p.add_argument("--hh-folder",     type=str, default=None,
+                   help="Dossier HandHistory (détecté auto si absent)")
+    p.add_argument("--import-hh",     action="store_true",
+                   help="Importer tout l'historique HH existant au démarrage")
     return p.parse_args()
 
 
@@ -594,6 +836,27 @@ def main() -> None:
 
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
+
+    # Mode calibration visuelle
+    if args.calibrate:
+        try:
+            from hud_calibrator import run_calibrator
+            run_calibrator()
+        except ImportError:
+            log.error("hud_calibrator.py introuvable dans le dossier.")
+        return
+
+    # Mode génération de templates
+    if args.gen_templates:
+        try:
+            from card_detector import TemplateGenerator
+            gen = TemplateGenerator()
+            n   = gen.generate_all()
+            print(f"\n✓ {n} templates générés dans le dossier templates/")
+            print("  Relancez main.py normalement pour utiliser la détection améliorée.")
+        except ImportError:
+            log.error("card_detector.py introuvable dans le dossier.")
+        return
 
     # Mode stats uniquement
     if args.stats:
@@ -617,6 +880,9 @@ def main() -> None:
         buy_in           = args.buy_in,
         game_type        = args.game,
         num_players      = args.players,
+        hero_name        = args.hero,
+        hh_folder        = args.hh_folder or "",
+        import_hh        = args.import_hh,
     )
     assistant.run()
 
