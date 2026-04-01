@@ -56,9 +56,50 @@ log = logging.getLogger(__name__)
 
 
 # ---------------------------------------------------------------------------
-# Chemin vers tesseract (Windows — adapter si Linux/macOS)
+# Détection automatique de Tesseract OCR (Windows / macOS / Linux)
 # ---------------------------------------------------------------------------
-# pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+def _find_and_configure_tesseract() -> bool:
+    """
+    Trouve et configure Tesseract automatiquement.
+    Cherche dans les chemins standards Windows, puis dans le PATH.
+    Retourne True si Tesseract est trouvé et configuré.
+    """
+    import platform, shutil
+    from pathlib import Path
+
+    # ── Windows : chemins standards ──────────────────────────────────────
+    if platform.system() == "Windows":
+        candidates = [
+            r"C:\Program Files\Tesseract-OCR\tesseract.exe",
+            r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe",
+            str(Path.home() / "AppData" / "Local" / "Programs" /
+                "Tesseract-OCR" / "tesseract.exe"),
+            r"C:\tools\Tesseract-OCR\tesseract.exe",
+        ]
+        for path in candidates:
+            if Path(path).exists():
+                pytesseract.pytesseract.tesseract_cmd = path
+                log.info(f"Tesseract trouvé : {path}")
+                return True
+
+    # ── Toutes plateformes : chercher dans le PATH ────────────────────────
+    found = shutil.which("tesseract")
+    if found:
+        pytesseract.pytesseract.tesseract_cmd = found
+        log.info(f"Tesseract dans PATH : {found}")
+        return True
+
+    # ── Non trouvé ────────────────────────────────────────────────────────
+    log.warning(
+        "Tesseract OCR introuvable.\n"
+        "  Windows : https://github.com/UB-Mannheim/tesseract/wiki\n"
+        "  macOS   : brew install tesseract\n"
+        "  Linux   : sudo apt install tesseract-ocr\n"
+        "L'OCR est désactivé — seule la détection par templates fonctionnera."
+    )
+    return False
+
+_TESSERACT_OK = _find_and_configure_tesseract()
 
 
 # ---------------------------------------------------------------------------
@@ -261,6 +302,8 @@ def preprocess_for_ocr(img_bgr: np.ndarray, scale: float = 2.5) -> Image.Image:
 def ocr_text(img_bgr: np.ndarray, config: str = "--psm 7 -c tessedit_char_whitelist=0123456789.$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ") -> str:
     """Extrait le texte brut d'une région pré-traitée."""
     pil_img = preprocess_for_ocr(img_bgr)
+    if not _TESSERACT_OK:
+        return ""
     text = pytesseract.image_to_string(pil_img, config=config).strip()
     log.debug(f"OCR brut : {repr(text)}")
     return text

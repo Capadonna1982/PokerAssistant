@@ -33,6 +33,7 @@ THEME = {
     "text_primary":  "#E8E8E8",
     "text_secondary":"#9AA5B4",
     "text_muted":    "#5A6478",
+    "text_dim":      "#3A4555",
 
     # Actions — couleurs sémantiques
     "action_fold":   "#E74C3C",   # rouge
