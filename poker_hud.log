@@ -1,0 +1,1486 @@
+2026-03-27 08:16:46,964 [CRITICAL] main — Module manquant : No module named 'cv2'
+2026-03-27 08:16:46,964 [CRITICAL] main — Vérifiez que capture.py / engine.py / claude_client.py / overlay.py sont dans le même dossier.
+2026-03-27 08:17:52,301 [CRITICAL] main — Module manquant : No module named 'cv2'
+2026-03-27 08:17:52,301 [CRITICAL] main — Vérifiez que capture.py / engine.py / claude_client.py / overlay.py sont dans le même dossier.
+2026-03-27 08:29:13,246 [CRITICAL] main — Module manquant : No module named 'cv2'
+2026-03-27 08:29:13,246 [CRITICAL] main — Vérifiez que capture.py / engine.py / claude_client.py / overlay.py sont dans le même dossier.
+2026-03-27 08:41:33,038 [CRITICAL] main — Module manquant : cannot import name 'DisplayData' from 'claude_client' (C:\Users\041252CA8\PycharmProjects\PokerAssistant\claude_client.py)
+2026-03-27 08:41:33,038 [CRITICAL] main — Vérifiez que capture.py / engine.py / claude_client.py / overlay.py sont dans le même dossier.
+2026-03-27 14:32:06,899 [INFO] main — Initialisation des modules…
+2026-03-27 14:32:06,952 [INFO] main —   ✓ capture.py   — PokerExtractor prêt
+2026-03-27 14:32:06,953 [INFO] main —   ✓ engine.py    — PokerEngine prêt (2000 simulations MC)
+2026-03-27 14:32:07,756 [INFO] main —   ✓ claude_client.py — CachedClaudeClient prêt
+2026-03-27 14:32:07,756 [INFO] main —   ✓ overlay.py   — HUDThread prêt
+2026-03-27 14:32:07,858 [INFO] main — HUD démarré. En attente de la table PokerStars…
+2026-03-27 14:32:07,858 [INFO] main — Raccourcis HUD : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité
+2026-03-27 14:32:07,858 [INFO] main — Boucle de capture démarrée.
+2026-03-27 14:32:07,859 [INFO] capture — Boucle de capture démarrée (intervalle : 1.5s)
+2026-03-27 14:32:08,124 [INFO] overlay — HUD démarré. Raccourcis : Esc=quitter, Ctrl+H=minimize, Ctrl+O=opacité
+2026-03-27 14:32:08,195 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:08,269 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:08,373 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:08,465 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:08,537 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:08,603 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:10,186 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:10,274 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:10,333 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:10,385 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:10,459 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:10,501 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:12,082 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:12,180 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:12,234 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:12,308 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:12,366 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:12,422 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:13,998 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:14,093 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:14,170 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:14,263 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:14,336 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:14,388 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:15,965 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:16,039 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:16,107 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:16,179 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:16,224 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:16,270 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:17,838 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:17,902 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:17,968 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:18,032 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:18,095 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:18,144 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:19,726 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:19,809 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:19,891 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:19,983 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:20,068 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:20,117 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:21,686 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:21,766 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:21,832 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:21,899 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:21,957 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:22,009 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:23,608 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:23,701 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:23,752 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:23,801 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:23,859 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:23,903 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:25,499 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:25,578 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:25,634 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:25,696 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:25,755 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:25,817 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:27,382 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:27,455 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:27,519 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:27,569 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:27,622 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:27,670 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:29,244 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:29,317 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:29,376 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:29,487 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:29,565 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:29,621 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:31,195 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:31,264 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:31,318 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:31,385 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:31,451 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:31,502 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:33,080 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:33,147 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:33,212 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:33,266 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:33,339 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:33,383 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:34,977 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:35,040 [ERROR] capture — Erreur capture board : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:35,101 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:35,167 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:35,244 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:32:35,279 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:32:36,856 [ERROR] capture — Erreur capture cartes joueur : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-27 14:35:37,437 [INFO] main — Initialisation des modules…
+2026-03-27 14:35:37,465 [INFO] main —   ✓ capture.py   — PokerExtractor prêt
+2026-03-27 14:35:37,465 [INFO] main —   ✓ engine.py    — PokerEngine prêt (2000 simulations MC)
+2026-03-27 14:35:37,703 [INFO] main —   ✓ claude_client.py — CachedClaudeClient prêt
+2026-03-27 14:35:37,703 [INFO] main —   ✓ overlay.py   — HUDThread prêt
+2026-03-27 14:35:37,767 [INFO] main — HUD démarré. En attente de la table PokerStars…
+2026-03-27 14:35:37,767 [INFO] main — Raccourcis HUD : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité
+2026-03-27 14:35:37,768 [INFO] main — Boucle de capture démarrée.
+2026-03-27 14:35:37,769 [INFO] capture — Boucle de capture démarrée (intervalle : 1.5s)
+2026-03-27 14:35:37,959 [INFO] overlay — HUD démarré. Raccourcis : Esc=quitter, Ctrl+H=minimize, Ctrl+O=opacité
+2026-03-27 14:35:38,853 [INFO] capture — Cartes joueur : []
+2026-03-27 14:35:39,042 [INFO] capture — Board : []
+2026-03-27 14:35:39,208 [INFO] capture — Pot : 0.0
+2026-03-27 14:35:39,406 [INFO] capture — Stack : 0.0
+2026-03-27 14:35:39,590 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:35:39,640 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:35:41,324 [INFO] capture — Cartes joueur : []
+2026-03-27 14:35:41,497 [INFO] capture — Board : []
+2026-03-27 14:35:41,645 [INFO] capture — Pot : 0.0
+2026-03-27 14:35:41,825 [INFO] capture — Stack : 0.0
+2026-03-27 14:35:41,998 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:35:42,033 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:35:43,709 [INFO] capture — Cartes joueur : []
+2026-03-27 14:35:43,887 [INFO] capture — Board : []
+2026-03-27 14:35:44,046 [INFO] capture — Pot : 0.0
+2026-03-27 14:35:44,224 [INFO] capture — Stack : 0.0
+2026-03-27 14:35:44,381 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:35:44,415 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:35:46,070 [INFO] capture — Cartes joueur : []
+2026-03-27 14:35:46,245 [INFO] capture — Board : []
+2026-03-27 14:35:46,397 [INFO] capture — Pot : 0.0
+2026-03-27 14:35:46,575 [INFO] capture — Stack : 0.0
+2026-03-27 14:35:46,726 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:35:46,764 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:35:48,464 [INFO] capture — Cartes joueur : []
+2026-03-27 14:35:48,626 [INFO] capture — Board : []
+2026-03-27 14:35:48,770 [INFO] capture — Pot : 0.0
+2026-03-27 14:35:49,004 [INFO] capture — Stack : 0.0
+2026-03-27 14:35:49,200 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:35:49,250 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:35:50,961 [INFO] capture — Cartes joueur : []
+2026-03-27 14:35:51,176 [INFO] capture — Board : []
+2026-03-27 14:35:51,351 [INFO] capture — Pot : 0.0
+2026-03-27 14:35:51,554 [INFO] capture — Stack : 0.0
+2026-03-27 14:35:51,735 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:35:51,787 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:35:53,489 [INFO] capture — Cartes joueur : []
+2026-03-27 14:35:53,723 [INFO] capture — Board : []
+2026-03-27 14:35:53,929 [INFO] capture — Pot : 0.0
+2026-03-27 14:35:54,209 [INFO] capture — Stack : 0.0
+2026-03-27 14:35:54,447 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:35:54,497 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:35:56,207 [INFO] capture — Cartes joueur : []
+2026-03-27 14:35:56,408 [INFO] capture — Board : []
+2026-03-27 14:35:56,585 [INFO] capture — Pot : 0.0
+2026-03-27 14:35:56,823 [INFO] capture — Stack : 0.0
+2026-03-27 14:35:57,005 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:35:57,044 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:35:58,769 [INFO] capture — Cartes joueur : []
+2026-03-27 14:35:58,974 [INFO] capture — Board : []
+2026-03-27 14:35:59,165 [INFO] capture — Pot : 0.0
+2026-03-27 14:35:59,368 [INFO] capture — Stack : 0.0
+2026-03-27 14:35:59,553 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:35:59,595 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:36:06,825 [INFO] main — Mode démo activé — aucune capture d'écran réelle.
+2026-03-27 14:36:07,028 [INFO] overlay — HUD démarré. Raccourcis : Esc=quitter, Ctrl+H=minimize, Ctrl+O=opacité
+2026-03-27 14:36:07,167 [INFO] main — ─── Démo : Préflop ───
+2026-03-27 14:36:07,671 [INFO] engine — Combos estimés : 937,845,656,300 — méthode : montecarlo
+2026-03-27 14:36:07,801 [INFO] engine — Résultat : win=10.3% | main=Préflop | action=CHECK
+2026-03-27 14:36:07,832 [ERROR] claude_client — Erreur inattendue tentative 1 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 14:36:09,844 [ERROR] claude_client — Erreur inattendue tentative 2 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 14:36:11,846 [ERROR] claude_client — Erreur inattendue tentative 3 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 14:36:13,848 [INFO] main —   → — | equity=0%
+2026-03-27 14:36:17,350 [INFO] main — ─── Démo : Flop ───
+2026-03-27 14:36:17,851 [INFO] engine — Combos estimés : 10,737,573 — méthode : montecarlo
+2026-03-27 14:36:17,924 [INFO] engine — Résultat : win=78.8% | main=Brelan | action=RAISE
+2026-03-27 14:36:17,924 [ERROR] claude_client — Erreur inattendue tentative 1 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 14:36:19,928 [ERROR] claude_client — Erreur inattendue tentative 2 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 14:36:21,931 [ERROR] claude_client — Erreur inattendue tentative 3 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 14:36:23,932 [INFO] main —   → — | equity=0%
+2026-03-27 14:36:24,061 [INFO] main — Signal 2 reçu — arrêt en cours…
+2026-03-27 14:44:05,296 [INFO] main — Initialisation des modules…
+2026-03-27 14:44:05,335 [INFO] main —   ✓ capture.py   — PokerExtractor prêt
+2026-03-27 14:44:05,335 [INFO] main —   ✓ engine.py    — PokerEngine prêt (2000 simulations MC)
+2026-03-27 14:44:06,121 [INFO] main —   ✓ claude_client.py — CachedClaudeClient prêt
+2026-03-27 14:44:06,121 [INFO] main —   ✓ overlay.py   — HUDThread prêt
+2026-03-27 14:44:06,200 [INFO] main — HUD démarré. En attente de la table PokerStars…
+2026-03-27 14:44:06,200 [INFO] main — Raccourcis HUD : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité
+2026-03-27 14:44:06,201 [INFO] main — Boucle de capture démarrée.
+2026-03-27 14:44:06,202 [INFO] capture — Boucle de capture démarrée (intervalle : 1.5s)
+2026-03-27 14:44:06,257 [INFO] overlay — HUD démarré. Raccourcis : Esc=quitter, Ctrl+H=minimize, Ctrl+O=opacité
+2026-03-27 14:44:07,493 [INFO] capture — Cartes joueur : []
+2026-03-27 14:44:07,674 [INFO] capture — Board : []
+2026-03-27 14:44:07,860 [INFO] capture — Pot : 0.0
+2026-03-27 14:44:08,050 [INFO] capture — Stack : 0.0
+2026-03-27 14:44:08,230 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:44:08,269 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:44:09,953 [INFO] capture — Cartes joueur : []
+2026-03-27 14:44:10,123 [INFO] capture — Board : []
+2026-03-27 14:44:10,294 [INFO] capture — Pot : 0.0
+2026-03-27 14:44:10,473 [INFO] capture — Stack : 0.0
+2026-03-27 14:44:10,650 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:44:10,682 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:44:12,350 [INFO] capture — Cartes joueur : []
+2026-03-27 14:44:12,505 [INFO] capture — Board : []
+2026-03-27 14:44:12,679 [INFO] capture — Pot : 0.0
+2026-03-27 14:44:12,852 [INFO] capture — Stack : 0.0
+2026-03-27 14:44:13,013 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:44:13,048 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:44:14,719 [INFO] capture — Cartes joueur : []
+2026-03-27 14:44:14,883 [INFO] capture — Board : []
+2026-03-27 14:44:15,057 [INFO] capture — Pot : 0.0
+2026-03-27 14:44:15,236 [INFO] capture — Stack : 0.0
+2026-03-27 14:44:15,392 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:44:15,429 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:44:17,096 [INFO] capture — Cartes joueur : []
+2026-03-27 14:44:17,248 [INFO] capture — Board : []
+2026-03-27 14:44:17,426 [INFO] capture — Pot : 0.0
+2026-03-27 14:44:17,610 [INFO] capture — Stack : 0.0
+2026-03-27 14:44:17,776 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:44:17,812 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:44:19,483 [INFO] capture — Cartes joueur : []
+2026-03-27 14:44:19,655 [INFO] capture — Board : []
+2026-03-27 14:44:19,825 [INFO] capture — Pot : 0.0
+2026-03-27 14:44:19,993 [INFO] capture — Stack : 0.0
+2026-03-27 14:44:20,138 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:44:20,173 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:44:21,830 [INFO] capture — Cartes joueur : []
+2026-03-27 14:44:21,999 [INFO] capture — Board : []
+2026-03-27 14:44:22,183 [INFO] capture — Pot : 0.0
+2026-03-27 14:44:22,373 [INFO] capture — Stack : 0.0
+2026-03-27 14:44:22,535 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:44:22,574 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:44:24,240 [INFO] capture — Cartes joueur : []
+2026-03-27 14:44:24,392 [INFO] capture — Board : []
+2026-03-27 14:44:24,568 [INFO] capture — Pot : 0.0
+2026-03-27 14:44:24,742 [INFO] capture — Stack : 0.0
+2026-03-27 14:44:24,901 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:44:24,937 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:44:26,591 [INFO] capture — Cartes joueur : []
+2026-03-27 14:44:26,767 [INFO] capture — Board : []
+2026-03-27 14:44:26,952 [INFO] capture — Pot : 0.0
+2026-03-27 14:44:27,145 [INFO] capture — Stack : 0.0
+2026-03-27 14:44:27,321 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:44:27,354 [INFO] capture — Joueurs actifs : 0
+2026-03-27 14:44:29,061 [INFO] capture — Cartes joueur : []
+2026-03-27 14:44:29,245 [INFO] capture — Board : []
+2026-03-27 14:44:29,467 [INFO] capture — Pot : 0.0
+2026-03-27 14:44:29,674 [INFO] capture — Stack : 0.0
+2026-03-27 14:44:29,857 [INFO] capture — Mise courante : 0.0
+2026-03-27 14:44:29,903 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:19:09,631 [INFO] main — Initialisation des modules…
+2026-03-27 15:19:09,714 [INFO] main —   ✓ capture.py   — PokerExtractor prêt
+2026-03-27 15:19:09,714 [INFO] main —   ✓ engine.py    — PokerEngine prêt (2000 simulations MC)
+2026-03-27 15:19:10,931 [INFO] main —   ✓ claude_client.py — CachedClaudeClient prêt
+2026-03-27 15:19:10,931 [INFO] main —   ✓ overlay.py   — HUDThread prêt
+2026-03-27 15:19:11,086 [INFO] main — HUD démarré. En attente de la table PokerStars…
+2026-03-27 15:19:11,086 [INFO] main — Raccourcis HUD : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité
+2026-03-27 15:19:11,086 [INFO] main — Boucle de capture démarrée.
+2026-03-27 15:19:11,088 [INFO] capture — Boucle de capture démarrée (intervalle : 1.5s)
+2026-03-27 15:19:11,139 [INFO] overlay — HUD démarré. Raccourcis : Esc=quitter, Ctrl+H=minimize, Ctrl+O=opacité
+2026-03-27 15:19:11,697 [INFO] capture — Cartes joueur : []
+2026-03-27 15:19:11,945 [INFO] capture — Board : []
+2026-03-27 15:19:12,156 [INFO] capture — Pot : 0.0
+2026-03-27 15:19:12,335 [INFO] capture — Stack : 0.0
+2026-03-27 15:19:12,532 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:19:12,580 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:19:14,304 [INFO] capture — Cartes joueur : []
+2026-03-27 15:19:14,502 [INFO] capture — Board : []
+2026-03-27 15:19:14,713 [INFO] capture — Pot : 0.0
+2026-03-27 15:19:14,952 [INFO] capture — Stack : 0.0
+2026-03-27 15:19:15,148 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:19:15,190 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:19:17,819 [ERROR] capture — Erreur capture cartes joueur : (3221225477, 'ObjectCache(00007ff908ff6600)::~ObjectCache(): WARNING! LEAK! object 0000027a18b50900 still has count 1 (id C:\\Program Files\\Tesseract-OCR/tessdata/eng.traineddatalstm-punc-dawg) ObjectCache(00007ff908ff6600)::~ObjectCache(): WARNING! LEAK! object 0000027a194c9020 still has count 1 (id C:\\Program Files\\Tesseract-OCR/tessdata/eng.traineddatalstm-word-dawg) ObjectCache(00007ff908ff6600)::~ObjectCache(): WARNING! LEAK! object 0000027a18b50970 still has count 1 (id C:\\Program Files\\Tesseract-OCR/tessdata/eng.traineddatalstm-number-dawg)')
+2026-03-27 15:19:18,013 [INFO] capture — Board : []
+2026-03-27 15:19:18,229 [INFO] capture — Pot : 0.0
+2026-03-27 15:19:18,446 [INFO] capture — Stack : 0.0
+2026-03-27 15:19:18,637 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:19:18,685 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:22:51,062 [INFO] main — Initialisation des modules…
+2026-03-27 15:22:51,094 [INFO] main —   ✓ capture.py   — PokerExtractor prêt
+2026-03-27 15:22:51,095 [INFO] main —   ✓ engine.py    — PokerEngine prêt (2000 simulations MC)
+2026-03-27 15:22:51,363 [INFO] main —   ✓ claude_client.py — CachedClaudeClient prêt
+2026-03-27 15:22:51,363 [INFO] main —   ✓ overlay.py   — HUDThread prêt
+2026-03-27 15:22:51,426 [INFO] main — HUD démarré. En attente de la table PokerStars…
+2026-03-27 15:22:51,426 [INFO] main — Raccourcis HUD : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité
+2026-03-27 15:22:51,427 [INFO] main — Boucle de capture démarrée.
+2026-03-27 15:22:51,428 [INFO] capture — Boucle de capture démarrée (intervalle : 1.5s)
+2026-03-27 15:22:51,458 [INFO] overlay — HUD démarré. Raccourcis : Esc=quitter, Ctrl+H=minimize, Ctrl+O=opacité
+2026-03-27 15:22:51,685 [INFO] capture — Cartes joueur : []
+2026-03-27 15:22:51,874 [INFO] capture — Board : []
+2026-03-27 15:22:52,108 [INFO] capture — Pot : 0.0
+2026-03-27 15:22:52,295 [INFO] capture — Stack : 0.0
+2026-03-27 15:22:52,482 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:22:52,520 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:22:54,184 [INFO] capture — Cartes joueur : []
+2026-03-27 15:22:54,338 [INFO] capture — Board : []
+2026-03-27 15:22:54,537 [INFO] capture — Pot : 0.0
+2026-03-27 15:22:54,725 [INFO] capture — Stack : 0.0
+2026-03-27 15:22:54,879 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:22:54,918 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:22:56,624 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:27,149 [INFO] main — Initialisation des modules…
+2026-03-27 15:23:27,175 [INFO] main —   ✓ capture.py        — PokerExtractor prêt
+2026-03-27 15:23:27,175 [INFO] main —   ✓ engine.py         — PokerEngine prêt (2000 simulations MC)
+2026-03-27 15:23:27,424 [INFO] main —   ✓ claude_client.py  — CachedClaudeClient prêt
+2026-03-27 15:23:27,424 [INFO] main —   ✓ overlay.py        — HUDThread prêt
+2026-03-27 15:23:27,458 [INFO] tracker — PokerTracker initialisé → C:\Users\041252CA8\PycharmProjects\PokerAssistant\poker_stats.db
+2026-03-27 15:23:27,464 [INFO] tracker — Session #1 démarrée — Tournoi | buy-in=0.0$
+2026-03-27 15:23:27,464 [INFO] main —   ✓ tracker.py        — Session #1 démarrée (buy-in=0.0$)
+2026-03-27 15:23:27,524 [INFO] main — HUD démarré. En attente de la table PokerStars…
+2026-03-27 15:23:27,525 [INFO] main — Raccourcis HUD  : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité
+2026-03-27 15:23:27,525 [INFO] main — Console         : tapez 'n' + Entrée = nouvelle main
+2026-03-27 15:23:27,525 [INFO] main —                   tapez 'end' + Entrée = clôturer la session
+2026-03-27 15:23:27,525 [INFO] main —                   tapez 'stats' + Entrée = ouvrir le dashboard
+2026-03-27 15:23:27,526 [INFO] main — Boucle de capture démarrée.
+2026-03-27 15:23:27,527 [INFO] capture — Boucle de capture démarrée (intervalle : 1.5s)
+2026-03-27 15:23:27,552 [INFO] overlay — HUD démarré. Raccourcis : Esc=quitter, Ctrl+H=minimize, Ctrl+O=opacité
+2026-03-27 15:23:27,778 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:27,975 [INFO] capture — Board : []
+2026-03-27 15:23:28,146 [INFO] capture — Pot : 0.0
+2026-03-27 15:23:28,328 [INFO] capture — Stack : 0.0
+2026-03-27 15:23:28,511 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:23:28,556 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:23:30,227 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:30,402 [INFO] capture — Board : []
+2026-03-27 15:23:30,546 [INFO] capture — Pot : 0.0
+2026-03-27 15:23:30,723 [INFO] capture — Stack : 0.0
+2026-03-27 15:23:30,869 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:23:30,903 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:23:32,575 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:32,763 [INFO] capture — Board : []
+2026-03-27 15:23:32,919 [INFO] capture — Pot : 0.0
+2026-03-27 15:23:33,098 [INFO] capture — Stack : 0.0
+2026-03-27 15:23:33,252 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:23:33,284 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:23:34,966 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:35,137 [INFO] capture — Board : []
+2026-03-27 15:23:35,293 [INFO] capture — Pot : 0.0
+2026-03-27 15:23:35,468 [INFO] capture — Stack : 0.0
+2026-03-27 15:23:35,612 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:23:35,649 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:23:37,295 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:37,470 [INFO] capture — Board : []
+2026-03-27 15:23:37,624 [INFO] capture — Pot : 0.0
+2026-03-27 15:23:37,809 [INFO] capture — Stack : 0.0
+2026-03-27 15:23:37,962 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:23:38,008 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:23:39,847 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:40,069 [INFO] capture — Board : []
+2026-03-27 15:23:40,252 [INFO] capture — Pot : 0.0
+2026-03-27 15:23:40,487 [INFO] capture — Stack : 0.0
+2026-03-27 15:23:40,654 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:23:40,705 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:23:42,390 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:42,595 [INFO] capture — Board : []
+2026-03-27 15:23:42,804 [INFO] capture — Pot : 0.0
+2026-03-27 15:23:43,056 [INFO] capture — Stack : 0.0
+2026-03-27 15:23:43,231 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:23:43,283 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:23:45,000 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:45,217 [INFO] capture — Board : []
+2026-03-27 15:23:45,395 [INFO] capture — Pot : 0.0
+2026-03-27 15:23:45,641 [INFO] capture — Stack : 0.0
+2026-03-27 15:23:45,825 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:23:45,878 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:23:47,587 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:47,785 [INFO] capture — Board : []
+2026-03-27 15:23:47,956 [INFO] capture — Pot : 0.0
+2026-03-27 15:23:48,175 [INFO] capture — Stack : 0.0
+2026-03-27 15:23:48,386 [INFO] capture — Mise courante : 0.0
+2026-03-27 15:23:48,421 [INFO] capture — Joueurs actifs : 0
+2026-03-27 15:23:50,153 [INFO] capture — Cartes joueur : []
+2026-03-27 15:23:50,354 [INFO] capture — Board : []
+2026-03-27 15:23:50,538 [INFO] capture — Pot : 0.0
+2026-03-27 15:23:50,754 [INFO] capture — Stack : 0.0
+2026-03-27 15:41:14,458 [INFO] main — Mode démo activé — aucune capture d'écran réelle.
+2026-03-27 15:41:14,715 [INFO] overlay — HUD démarré. Raccourcis : Esc=quitter, Ctrl+H=minimize, Ctrl+O=opacité
+2026-03-27 15:41:15,307 [INFO] main — ─── Démo : Préflop ───
+2026-03-27 15:41:15,812 [INFO] engine — Combos estimés : 937,845,656,300 — méthode : montecarlo
+2026-03-27 15:41:15,934 [INFO] engine — Résultat : win=10.9% | main=Préflop | action=CHECK
+2026-03-27 15:41:15,998 [ERROR] claude_client — Erreur inattendue tentative 1 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 15:41:18,001 [ERROR] claude_client — Erreur inattendue tentative 2 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 15:41:20,004 [ERROR] claude_client — Erreur inattendue tentative 3 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 15:41:22,006 [INFO] main —   → — | equity=0%
+2026-03-27 15:41:25,508 [INFO] main — ─── Démo : Flop ───
+2026-03-27 15:41:26,009 [INFO] engine — Combos estimés : 10,737,573 — méthode : montecarlo
+2026-03-27 15:41:26,079 [INFO] engine — Résultat : win=77.9% | main=Brelan | action=RAISE
+2026-03-27 15:41:26,079 [ERROR] claude_client — Erreur inattendue tentative 1 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 15:41:28,084 [ERROR] claude_client — Erreur inattendue tentative 2 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 15:41:30,086 [ERROR] claude_client — Erreur inattendue tentative 3 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 15:41:32,088 [INFO] main —   → — | equity=0%
+2026-03-27 15:41:35,590 [INFO] main — ─── Démo : Turn ───
+2026-03-27 15:41:36,091 [INFO] engine — Combos estimés : 163,185 — méthode : montecarlo
+2026-03-27 15:41:36,138 [INFO] engine — Résultat : win=84.6% | main=Brelan | action=RAISE
+2026-03-27 15:41:36,138 [ERROR] claude_client — Erreur inattendue tentative 1 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 15:41:38,147 [ERROR] claude_client — Erreur inattendue tentative 2 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 15:41:40,149 [ERROR] claude_client — Erreur inattendue tentative 3 : "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-03-27 15:41:42,152 [INFO] main —   → — | equity=0%
+2026-03-27 15:41:45,654 [INFO] main — ─── Démo : River ───
+2026-03-27 15:41:46,155 [INFO] engine — Combos estimés : 990 — méthode : exact
+2026-03-31 20:33:12,983 [INFO] card_detector — Aucun template trouvé — génération automatique…
+2026-03-31 20:33:13,071 [INFO] card_detector — Templates générés : 104 fichiers dans C:\Users\041252CA8\PycharmProjects\PokerAssistant\templates
+2026-03-31 20:33:14,717 [INFO] card_detector — Templates chargés : 52 cartes complètes, 78 rangs
+2026-03-31 20:33:14,717 [INFO] capture — card_detector.py detecte - templates actives (~99%)
+2026-03-31 20:33:26,713 [WARNING] rapport_pdf — reportlab non installé — pip install reportlab
+2026-03-31 20:38:34,467 [INFO] card_detector — Templates chargés : 52 cartes complètes, 78 rangs
+2026-03-31 20:38:34,467 [INFO] capture — card_detector.py detecte - templates actives (~99%)
+2026-03-31 20:38:48,529 [INFO] main — Initialisation des modules…
+2026-03-31 20:38:48,572 [INFO] capture — Détecteur d'actions adverses activé
+2026-03-31 20:38:48,572 [INFO] main —   ✓ capture.py        — PokerExtractor prêt (templates OpenCV actifs)
+2026-03-31 20:38:48,572 [INFO] main —   ✓ engine.py         — PokerEngine prêt (2000 simulations MC)
+2026-03-31 20:38:49,293 [INFO] main —   ✓ claude_client.py  — CachedClaudeClient prêt
+2026-03-31 20:38:49,293 [INFO] main —   ✓ overlay.py        — HUDThread prêt
+2026-03-31 20:38:49,316 [INFO] tracker — PokerTracker initialisé → C:\Users\041252CA8\PycharmProjects\PokerAssistant\poker_stats.db
+2026-03-31 20:38:49,324 [INFO] tracker — Session #2 démarrée — Tournoi | buy-in=0.0$
+2026-03-31 20:38:49,324 [INFO] main —   ✓ tracker.py        — Session #2 démarrée (buy-in=0.0$)
+2026-03-31 20:38:49,336 [INFO] main —   ✓ profil_builder.py — ProfilBuilder prêt
+2026-03-31 20:38:49,568 [INFO] main —   ✓ bluff_detector.py — PatternEngine prêt
+2026-03-31 20:38:49,576 [INFO] alerts — SoundEngine : système=Windows playsound=False winsound=True
+2026-03-31 20:38:49,616 [INFO] alerts — Fichiers WAV générés dans C:\Users\041252CA8\PycharmProjects\PokerAssistant\sounds
+2026-03-31 20:38:49,616 [INFO] alerts — AlertManager créé — activé, volume=70%, intervalle=3.0s
+2026-03-31 20:38:49,616 [INFO] main —   ✓ alerts.py         — AlertManager prêt
+2026-03-31 20:38:49,724 [INFO] main — HUD démarré. En attente de la table PokerStars…
+2026-03-31 20:38:49,724 [INFO] main — Raccourcis HUD  : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité
+2026-03-31 20:38:49,725 [WARNING] hh_parser — Dossier HandHistory non trouvé automatiquement.
+2026-03-31 20:38:49,725 [WARNING] hh_parser — Utilisez --folder pour spécifier le chemin manuellement.
+2026-03-31 20:38:49,725 [WARNING] hh_parser — Surveillance HH désactivée — dossier non trouvé.
+2026-03-31 20:38:49,725 [INFO] main — Console         : tapez 'n' + Entrée = nouvelle main
+2026-03-31 20:38:49,725 [INFO] main —                   tapez 'end' + Entrée = clôturer la session
+2026-03-31 20:38:49,725 [INFO] main —                   tapez 'stats' + Entrée = ouvrir le dashboard
+2026-03-31 20:38:49,726 [INFO] main — Boucle de capture démarrée.
+2026-03-31 20:38:49,726 [INFO] capture — Détecteur d'actions adverses activé
+2026-03-31 20:38:49,726 [INFO] capture — Boucle de capture démarrée (intervalle : 1.5s)
+2026-03-31 20:38:49,743 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:38:49,762 [INFO] capture — Board (templates) : []
+2026-03-31 20:38:50,119 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:50,173 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:50,236 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:50,270 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:38:50,374 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:38:50,374 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:38:52,309 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:38:52,326 [INFO] capture — Board (templates) : []
+2026-03-31 20:38:52,393 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:52,457 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:52,524 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:52,572 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:38:52,724 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:38:52,725 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:38:54,722 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:38:54,740 [INFO] capture — Board (templates) : []
+2026-03-31 20:38:54,799 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:54,847 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:54,896 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:54,936 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:38:55,052 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:38:55,052 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:38:56,987 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:38:57,004 [INFO] capture — Board (templates) : []
+2026-03-31 20:38:57,066 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:57,126 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:57,175 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:57,215 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:38:57,315 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:38:57,316 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:38:59,238 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:38:59,255 [INFO] capture — Board (templates) : []
+2026-03-31 20:38:59,311 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:59,357 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:59,415 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:38:59,466 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:38:59,591 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:38:59,591 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:01,520 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:01,537 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:01,590 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:01,638 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:01,686 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:01,726 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:01,843 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:01,843 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:03,764 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:03,781 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:03,842 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:03,890 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:03,937 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:03,975 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:04,098 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:04,099 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:06,363 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:06,380 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:06,441 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:06,488 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:06,537 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:06,573 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:06,702 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:06,702 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:08,663 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:08,679 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:08,734 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:08,782 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:08,832 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:08,869 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:08,972 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:08,972 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:10,894 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:10,911 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:10,966 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:11,013 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:11,062 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:11,100 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:11,211 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:11,212 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:13,123 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:13,141 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:13,198 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:13,246 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:13,294 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:13,332 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:13,445 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:13,445 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:15,555 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:15,574 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:15,637 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:15,699 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:15,748 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:15,788 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:15,910 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:15,910 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:17,855 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:17,872 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:17,925 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:17,975 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:18,025 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:18,060 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:18,161 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:18,161 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:20,088 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:20,103 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:20,158 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:20,205 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:20,256 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:20,292 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:20,393 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:20,394 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:22,298 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:22,316 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:22,373 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:22,423 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:22,470 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:22,509 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:22,635 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:22,635 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:24,598 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:24,614 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:24,671 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:24,721 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:24,770 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:24,805 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:24,932 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:24,932 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:26,898 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:26,916 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:26,973 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:27,015 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:27,066 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:27,105 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:27,211 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:27,211 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:29,146 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:29,162 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:29,221 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:29,264 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:29,315 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:29,355 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:29,482 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:29,482 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:31,426 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:31,443 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:31,498 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:31,546 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:31,604 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:31,653 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:31,790 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:31,790 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:33,757 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:33,773 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:33,828 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:33,878 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:33,929 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:33,965 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:34,068 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:34,068 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:36,008 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:36,022 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:36,077 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:36,126 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:36,175 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:36,213 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:36,319 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:36,320 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:38,253 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:38,271 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:38,328 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:38,376 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:38,427 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:38,462 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:38,566 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:38,566 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:40,517 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:40,535 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:40,592 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:40,645 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:40,688 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:40,726 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:40,838 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:40,838 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:42,816 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:42,833 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:42,892 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:42,938 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:42,988 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:43,028 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:43,160 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:43,160 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:45,196 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:45,213 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:45,272 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:45,321 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:45,370 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:45,406 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:45,548 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:45,548 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:47,511 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:47,529 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:47,584 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:47,636 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:47,683 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:47,720 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:47,822 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:47,822 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:49,745 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:49,764 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:49,818 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:49,863 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:49,914 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:49,954 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:50,055 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:50,055 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:51,974 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:51,992 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:52,053 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:52,123 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:52,188 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:52,234 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:52,352 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:52,352 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:54,322 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:54,340 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:54,395 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:54,443 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:54,494 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:54,530 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:54,636 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:54,636 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:56,556 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:56,573 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:56,627 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:56,676 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:56,726 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:56,761 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:56,865 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:56,865 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:39:58,786 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:39:58,805 [INFO] capture — Board (templates) : []
+2026-03-31 20:39:58,859 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:58,910 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:58,958 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:39:58,993 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:39:59,099 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:39:59,099 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:01,033 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:01,052 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:01,109 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:01,155 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:01,204 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:01,242 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:01,356 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:01,356 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:03,264 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:03,284 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:03,348 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:03,417 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:03,493 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:03,551 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:03,694 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:03,694 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:05,663 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:05,682 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:05,741 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:05,803 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:05,855 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:05,889 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:06,011 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:06,011 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:07,962 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:07,978 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:08,033 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:08,082 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:08,132 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:08,169 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:08,270 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:08,271 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:10,192 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:10,211 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:10,267 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:10,313 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:10,364 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:10,399 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:10,514 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:10,514 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:12,425 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:12,440 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:12,498 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:12,547 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:12,595 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:12,635 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:12,754 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:12,755 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:14,705 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:14,723 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:14,780 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:14,827 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:14,879 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:14,909 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:15,016 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:15,016 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:16,923 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:16,940 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:16,996 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:17,041 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:17,092 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:17,127 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:17,231 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:17,231 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:19,153 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:19,169 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:19,226 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:19,272 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:19,324 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:19,359 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:19,464 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:19,464 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:21,383 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:21,400 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:21,458 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:21,504 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:21,554 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:21,590 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:21,694 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:21,694 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:23,598 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:23,615 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:23,671 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:23,718 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:23,769 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:23,805 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:23,912 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:23,913 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:25,849 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:25,865 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:25,921 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:25,968 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:26,018 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:26,053 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:26,168 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:26,168 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:28,080 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:28,096 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:28,150 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:28,199 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:28,249 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:28,286 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:28,390 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:28,390 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:30,342 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:30,360 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:30,417 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:30,463 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:30,513 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:30,550 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:30,652 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:30,652 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:32,557 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:32,574 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:32,630 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:32,678 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:32,728 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:32,764 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:32,881 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:32,881 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:34,805 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:34,822 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:34,880 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:34,927 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:34,977 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:35,013 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:35,117 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:35,118 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:37,070 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:37,086 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:37,145 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:37,193 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:37,242 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:37,279 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:37,386 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:37,386 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:39,318 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:39,335 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:39,392 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:39,442 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:39,492 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:39,528 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:39,650 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:39,650 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:41,602 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:41,617 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:41,674 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:41,720 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:41,770 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:41,806 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:41,910 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:41,910 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:43,831 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:43,853 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:43,904 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:43,954 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:44,001 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:44,039 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:44,141 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:44,141 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:46,046 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:46,063 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:46,118 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:46,172 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:46,220 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:46,258 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:46,391 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:46,391 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:48,410 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:48,427 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:48,498 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:48,556 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:48,624 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:48,669 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:48,789 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:48,789 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:50,808 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:50,824 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:50,891 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:50,954 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:51,021 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:51,070 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:51,215 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:51,215 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:53,191 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:53,206 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:53,280 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:53,333 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:53,379 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:53,415 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:53,535 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:53,535 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:55,472 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:55,489 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:55,547 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:55,591 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:55,641 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:55,681 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:55,802 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:55,802 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:57,736 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:40:57,753 [INFO] capture — Board (templates) : []
+2026-03-31 20:40:57,811 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:57,857 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:57,906 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:40:57,943 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:40:58,048 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:40:58,048 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:40:59,982 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:00,000 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:00,065 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:00,123 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:00,174 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:00,212 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:00,345 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:00,345 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:02,298 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:02,316 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:02,372 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:02,423 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:02,471 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:02,508 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:02,616 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:02,616 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:04,579 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:04,597 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:04,655 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:04,705 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:04,755 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:04,794 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:04,925 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:04,925 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:06,912 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:06,928 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:06,986 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:07,035 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:07,085 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:07,123 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:07,247 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:07,247 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:09,196 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:09,212 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:09,266 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:09,313 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:09,364 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:09,404 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:09,519 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:09,519 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:11,442 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:11,458 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:11,516 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:11,561 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:11,613 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:11,650 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:11,752 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:11,753 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:13,672 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:13,689 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:13,746 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:13,794 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:13,843 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:13,879 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:13,983 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:13,983 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:15,907 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:15,923 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:15,978 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:16,023 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:16,075 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:16,110 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:16,235 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:16,235 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:18,253 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:18,271 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:18,326 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:18,372 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:18,422 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:18,460 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:18,567 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:18,568 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:20,503 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:20,519 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:20,572 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:20,620 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:20,672 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:20,710 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:20,824 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:20,825 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:22,766 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:22,782 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:22,838 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:22,888 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:22,935 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:22,971 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:23,077 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:23,077 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:25,016 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:25,030 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:25,088 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:25,134 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:25,182 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:25,220 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:25,324 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:25,324 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:27,246 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:27,263 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:27,321 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:27,364 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:27,415 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:27,451 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:27,567 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:27,567 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:29,477 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:29,495 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:29,551 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:29,597 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:29,648 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:29,683 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:29,789 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:29,789 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:31,761 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:31,777 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:31,830 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:31,877 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:31,927 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:31,964 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:32,071 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:32,071 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:34,006 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:34,023 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:34,077 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:34,126 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:34,175 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:34,214 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:34,325 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:34,325 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:36,236 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:36,253 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:36,312 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:36,359 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:36,409 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:36,446 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:36,552 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:36,552 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:38,483 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:38,502 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:38,562 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:38,611 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:38,661 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:38,698 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:38,824 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:38,825 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:40,816 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:40,834 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:40,891 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:40,937 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:40,989 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:41,024 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:41,123 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:41,123 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:43,031 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:43,047 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:43,106 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:43,153 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:43,201 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:43,239 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:43,339 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:43,339 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:45,299 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:45,315 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:45,371 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:45,416 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:45,467 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:45,502 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:45,606 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:45,606 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:47,511 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:47,527 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:47,583 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:47,632 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:47,681 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:47,720 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:47,818 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:47,818 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:49,760 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:49,777 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:49,834 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:49,879 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:49,930 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:49,965 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:50,083 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:50,083 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:51,990 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:52,007 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:52,063 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:52,111 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:52,162 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:52,196 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:52,297 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:52,297 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:54,223 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:54,240 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:54,293 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:54,343 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:54,393 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:54,428 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:54,532 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:54,540 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:56,455 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:56,473 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:56,527 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:56,574 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:56,626 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:56,662 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:56,764 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:56,764 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:41:58,687 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:41:58,702 [INFO] capture — Board (templates) : []
+2026-03-31 20:41:58,757 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:58,806 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:58,855 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:41:58,890 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:41:59,005 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:41:59,005 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:00,952 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:00,967 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:01,029 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:01,093 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:01,142 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:01,175 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:01,290 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:01,290 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:03,264 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:03,282 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:03,357 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:03,415 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:03,480 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:03,530 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:03,664 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:03,664 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:05,662 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:05,683 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:05,743 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:05,809 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:05,873 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:05,920 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:06,046 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:06,047 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:08,075 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:08,094 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:08,152 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:08,199 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:08,252 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:08,287 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:08,447 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:08,447 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:10,474 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:10,492 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:10,551 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:10,607 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:10,662 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:10,702 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:10,820 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:10,820 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:12,805 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:12,823 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:12,878 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:12,935 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:13,000 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:13,047 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:13,159 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:13,159 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:15,071 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:15,087 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:15,145 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:15,192 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:15,242 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:15,281 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:15,402 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:15,402 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:17,338 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:17,354 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:17,407 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:17,457 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:17,506 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:17,542 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:17,649 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:17,649 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:19,565 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:19,583 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:19,642 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:19,690 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:19,739 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:19,774 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:19,881 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:19,881 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:21,833 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:21,848 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:21,904 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:21,954 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:22,005 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:22,040 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:22,149 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:22,150 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:24,095 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:24,113 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:24,173 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:24,218 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:24,266 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:24,306 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:24,439 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:24,439 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:26,345 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:26,362 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:26,419 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:26,465 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:26,515 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:26,554 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:26,662 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:26,662 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:28,592 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:28,609 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:28,673 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:28,743 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:28,807 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:28,853 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:28,976 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:28,976 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:30,890 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:30,907 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:30,964 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:31,015 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:31,070 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:31,120 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:31,254 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:31,255 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:33,255 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:33,272 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:33,336 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:33,396 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:33,443 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:33,480 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:33,608 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:33,609 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:35,653 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:35,670 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:35,735 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:35,801 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:35,865 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:35,914 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:36,044 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:36,044 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:38,001 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:38,017 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:38,074 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:38,123 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:38,186 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:38,228 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:38,367 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:38,367 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:40,333 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:40,351 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:40,407 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:40,455 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:40,509 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:40,543 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:40,672 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:40,672 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:42,599 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:42,617 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:42,673 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:42,717 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:42,767 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:42,805 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:42,913 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:42,913 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:44,863 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:42:44,879 [INFO] capture — Board (templates) : []
+2026-03-31 20:42:44,936 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:44,984 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:45,033 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:42:45,072 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:42:45,204 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:42:45,204 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:42:45,632 [INFO] action_detector — Actions détectées (preflop) : Siège 1: FOLD (conf=80%) | Siège 2: FOLD (conf=80%) | Siège 3: FOLD (conf=80%) | Siège 4: FOLD (conf=80%) | Siège 5: FOLD (conf=80%) | Siège 6: FOLD (conf=80%) | Siège 7: FOLD (conf=80%) | Siège 8: FOLD (conf=80%) | Siège 9: FOLD (conf=80%)
+2026-03-31 20:42:45,632 [INFO] capture — Actions adverses : S1=FOLD | S2=FOLD | S3=FOLD | S4=FOLD | S5=FOLD | S6=FOLD | S7=FOLD | S8=FOLD | S9=FOLD
+2026-03-31 20:42:45,633 [INFO] capture — Changement détecté — stage : preflop
+2026-03-31 20:42:45,635 [INFO] main — Boucle de capture terminée.
+2026-03-31 20:43:04,496 [INFO] card_detector — Templates chargés : 52 cartes complètes, 78 rangs
+2026-03-31 20:43:04,496 [INFO] capture — card_detector.py detecte - templates actives (~99%)
+2026-03-31 20:43:05,239 [INFO] main — Initialisation des modules…
+2026-03-31 20:43:05,277 [INFO] capture — Détecteur d'actions adverses activé
+2026-03-31 20:43:05,277 [INFO] main —   ✓ capture.py        — PokerExtractor prêt (templates OpenCV actifs)
+2026-03-31 20:43:05,277 [INFO] main —   ✓ engine.py         — PokerEngine prêt (2000 simulations MC)
+2026-03-31 20:43:05,571 [INFO] main —   ✓ claude_client.py  — CachedClaudeClient prêt
+2026-03-31 20:43:05,571 [INFO] main —   ✓ overlay.py        — HUDThread prêt
+2026-03-31 20:43:05,573 [INFO] tracker — PokerTracker initialisé → C:\Users\041252CA8\PycharmProjects\PokerAssistant\poker_stats.db
+2026-03-31 20:43:05,589 [INFO] tracker — Session #3 démarrée — Tournoi | buy-in=0.0$
+2026-03-31 20:43:05,589 [INFO] main —   ✓ tracker.py        — Session #3 démarrée (buy-in=0.0$)
+2026-03-31 20:43:05,590 [INFO] main —   ✓ profil_builder.py — ProfilBuilder prêt
+2026-03-31 20:43:05,852 [INFO] main —   ✓ bluff_detector.py — PatternEngine prêt
+2026-03-31 20:43:05,854 [INFO] alerts — SoundEngine : système=Windows playsound=False winsound=True
+2026-03-31 20:43:05,856 [INFO] alerts — Fichiers WAV générés dans C:\Users\041252CA8\PycharmProjects\PokerAssistant\sounds
+2026-03-31 20:43:05,856 [INFO] alerts — AlertManager créé — activé, volume=70%, intervalle=3.0s
+2026-03-31 20:43:05,856 [INFO] main —   ✓ alerts.py         — AlertManager prêt
+2026-03-31 20:43:05,926 [INFO] main — HUD démarré. En attente de la table PokerStars…
+2026-03-31 20:43:05,926 [INFO] main — Raccourcis HUD  : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité
+2026-03-31 20:43:05,927 [WARNING] hh_parser — Dossier HandHistory non trouvé automatiquement.
+2026-03-31 20:43:05,927 [WARNING] hh_parser — Utilisez --folder pour spécifier le chemin manuellement.
+2026-03-31 20:43:05,927 [WARNING] hh_parser — Surveillance HH désactivée — dossier non trouvé.
+2026-03-31 20:43:05,927 [INFO] main — Console         : tapez 'n' + Entrée = nouvelle main
+2026-03-31 20:43:05,927 [INFO] main —                   tapez 'end' + Entrée = clôturer la session
+2026-03-31 20:43:05,927 [INFO] main —                   tapez 'stats' + Entrée = ouvrir le dashboard
+2026-03-31 20:43:05,928 [INFO] main — Boucle de capture démarrée.
+2026-03-31 20:43:05,929 [INFO] capture — Détecteur d'actions adverses activé
+2026-03-31 20:43:05,929 [INFO] capture — Boucle de capture démarrée (intervalle : 1.5s)
+2026-03-31 20:43:05,944 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:43:05,962 [INFO] capture — Board (templates) : []
+2026-03-31 20:43:06,035 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:43:06,098 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:43:06,159 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:43:06,206 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:43:06,340 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:43:06,340 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:43:08,342 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:43:08,359 [INFO] capture — Board (templates) : []
+2026-03-31 20:43:08,421 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:43:08,482 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:43:08,531 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:43:08,574 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:43:08,709 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:43:08,709 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 20:43:10,689 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 20:43:10,707 [INFO] capture — Board (templates) : []
+2026-03-31 20:43:10,765 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:43:10,814 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:43:10,863 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 20:43:10,901 [INFO] capture — Joueurs actifs : 0
+2026-03-31 20:43:11,028 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 20:43:11,028 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:08:13,605 [INFO] card_detector — Templates chargés : 52 cartes complètes, 78 rangs
+2026-03-31 21:08:13,606 [INFO] capture — card_detector.py detecte - templates actives (~99%)
+2026-03-31 21:08:27,829 [INFO] main — Initialisation des modules…
+2026-03-31 21:08:27,896 [INFO] capture — Détecteur d'actions adverses activé
+2026-03-31 21:08:27,896 [INFO] main —   ✓ capture.py        — PokerExtractor prêt (templates OpenCV actifs)
+2026-03-31 21:08:27,896 [INFO] main —   ✓ engine.py         — PokerEngine prêt (2000 simulations MC)
+2026-03-31 21:08:28,687 [INFO] main —   ✓ claude_client.py  — CachedClaudeClient prêt
+2026-03-31 21:08:28,687 [INFO] main —   ✓ overlay.py        — HUDThread prêt
+2026-03-31 21:08:28,688 [INFO] tracker — PokerTracker initialisé → C:\Users\041252CA8\PycharmProjects\PokerAssistant\poker_stats.db
+2026-03-31 21:08:28,695 [INFO] tracker — Session #4 démarrée — Tournoi | buy-in=0.0$
+2026-03-31 21:08:28,695 [INFO] main —   ✓ tracker.py        — Session #4 démarrée (buy-in=0.0$)
+2026-03-31 21:08:28,697 [INFO] main —   ✓ profil_builder.py — ProfilBuilder prêt
+2026-03-31 21:08:28,930 [INFO] main —   ✓ bluff_detector.py — PatternEngine prêt
+2026-03-31 21:08:28,934 [INFO] alerts — SoundEngine : système=Windows playsound=False winsound=True
+2026-03-31 21:08:28,937 [INFO] alerts — Fichiers WAV générés dans C:\Users\041252CA8\PycharmProjects\PokerAssistant\sounds
+2026-03-31 21:08:28,937 [INFO] alerts — AlertManager créé — activé, volume=70%, intervalle=3.0s
+2026-03-31 21:08:28,937 [INFO] main —   ✓ alerts.py         — AlertManager prêt
+2026-03-31 21:08:29,014 [INFO] main — HUD démarré. En attente de la table PokerStars…
+2026-03-31 21:08:29,014 [INFO] main — Raccourcis HUD  : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité
+2026-03-31 21:08:29,015 [WARNING] hh_parser — Dossier HandHistory non trouvé automatiquement.
+2026-03-31 21:08:29,015 [WARNING] hh_parser — Utilisez --folder pour spécifier le chemin manuellement.
+2026-03-31 21:08:29,015 [WARNING] hh_parser — Surveillance HH désactivée — dossier non trouvé.
+2026-03-31 21:08:29,015 [INFO] main — Console         : tapez 'n' + Entrée = nouvelle main
+2026-03-31 21:08:29,015 [INFO] main —                   tapez 'end' + Entrée = clôturer la session
+2026-03-31 21:08:29,015 [INFO] main —                   tapez 'stats' + Entrée = ouvrir le dashboard
+2026-03-31 21:08:29,016 [INFO] main — Boucle de capture démarrée.
+2026-03-31 21:08:29,017 [INFO] capture — Détecteur d'actions adverses activé
+2026-03-31 21:08:29,017 [INFO] capture — Boucle de capture démarrée (intervalle : 1.5s)
+2026-03-31 21:08:29,035 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:08:29,054 [INFO] capture — Board (templates) : []
+2026-03-31 21:08:29,127 [INFO] overlay — HUD démarré. Raccourcis : Esc=quitter, Ctrl+H=minimize, Ctrl+O=opacité
+2026-03-31 21:08:29,358 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:29,414 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:29,480 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:29,526 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:08:29,643 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:08:29,645 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:08:31,601 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:08:31,619 [INFO] capture — Board (templates) : []
+2026-03-31 21:08:31,680 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:31,750 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:31,823 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:31,864 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:08:32,004 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:08:32,004 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:08:33,999 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:08:34,015 [INFO] capture — Board (templates) : []
+2026-03-31 21:08:34,080 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:34,145 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:34,213 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:34,255 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:08:34,385 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:08:34,385 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:08:36,331 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:08:36,345 [INFO] capture — Board (templates) : []
+2026-03-31 21:08:36,407 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:36,457 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:36,525 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:36,574 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:08:36,703 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:08:36,703 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:08:38,693 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:08:38,710 [INFO] capture — Board (templates) : []
+2026-03-31 21:08:38,774 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:38,840 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:38,907 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:38,954 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:08:39,073 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:08:39,073 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:08:41,111 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:08:41,127 [INFO] capture — Board (templates) : []
+2026-03-31 21:08:41,186 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:41,235 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:41,282 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:41,314 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:08:41,432 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:08:41,432 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:08:43,392 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:08:43,410 [INFO] capture — Board (templates) : []
+2026-03-31 21:08:43,466 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:43,515 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:43,564 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:43,599 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:08:43,702 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:08:43,702 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:08:45,654 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:08:45,672 [INFO] capture — Board (templates) : []
+2026-03-31 21:08:45,734 [ERROR] capture — Erreur capture pot : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:45,796 [ERROR] capture — Erreur capture stack : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:45,847 [ERROR] capture — Erreur capture mise : tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-03-31 21:08:45,878 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:08:45,997 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:08:45,998 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:11:49,024 [INFO] card_detector — Templates chargés : 52 cartes complètes, 78 rangs
+2026-03-31 21:11:49,025 [INFO] capture — card_detector.py detecte - templates actives (~99%)
+2026-03-31 21:11:49,052 [INFO] capture — Tesseract trouvé : C:\Program Files\Tesseract-OCR\tesseract.exe
+2026-03-31 21:11:49,751 [INFO] main — Initialisation des modules…
+2026-03-31 21:11:49,753 [INFO] capture — Détecteur d'actions adverses activé
+2026-03-31 21:11:49,753 [INFO] main —   ✓ capture.py        — PokerExtractor prêt (templates OpenCV actifs)
+2026-03-31 21:11:49,753 [INFO] main —   ✓ engine.py         — PokerEngine prêt (2000 simulations MC)
+2026-03-31 21:11:50,018 [INFO] main —   ✓ claude_client.py  — CachedClaudeClient prêt
+2026-03-31 21:11:50,018 [INFO] main —   ✓ overlay.py        — HUDThread prêt
+2026-03-31 21:11:50,030 [INFO] tracker — PokerTracker initialisé → C:\Users\041252CA8\PycharmProjects\PokerAssistant\poker_stats.db
+2026-03-31 21:11:50,036 [INFO] tracker — Session #5 démarrée — Tournoi | buy-in=0.0$
+2026-03-31 21:11:50,036 [INFO] main —   ✓ tracker.py        — Session #5 démarrée (buy-in=0.0$)
+2026-03-31 21:11:50,037 [INFO] main —   ✓ profil_builder.py — ProfilBuilder prêt
+2026-03-31 21:11:50,276 [INFO] main —   ✓ bluff_detector.py — PatternEngine prêt
+2026-03-31 21:11:50,277 [INFO] alerts — SoundEngine : système=Windows playsound=False winsound=True
+2026-03-31 21:11:50,279 [INFO] alerts — Fichiers WAV générés dans C:\Users\041252CA8\PycharmProjects\PokerAssistant\sounds
+2026-03-31 21:11:50,279 [INFO] alerts — AlertManager créé — activé, volume=70%, intervalle=3.0s
+2026-03-31 21:11:50,279 [INFO] main —   ✓ alerts.py         — AlertManager prêt
+2026-03-31 21:11:50,341 [INFO] main — HUD démarré. En attente de la table PokerStars…
+2026-03-31 21:11:50,341 [INFO] main — Raccourcis HUD  : Esc=quitter  Ctrl+H=minimiser  Ctrl+O=opacité
+2026-03-31 21:11:50,342 [WARNING] hh_parser — Dossier HandHistory non trouvé automatiquement.
+2026-03-31 21:11:50,342 [WARNING] hh_parser — Utilisez --folder pour spécifier le chemin manuellement.
+2026-03-31 21:11:50,342 [WARNING] hh_parser — Surveillance HH désactivée — dossier non trouvé.
+2026-03-31 21:11:50,342 [INFO] main — Console         : tapez 'n' + Entrée = nouvelle main
+2026-03-31 21:11:50,342 [INFO] main —                   tapez 'end' + Entrée = clôturer la session
+2026-03-31 21:11:50,342 [INFO] main —                   tapez 'stats' + Entrée = ouvrir le dashboard
+2026-03-31 21:11:50,343 [INFO] main — Boucle de capture démarrée.
+2026-03-31 21:11:50,344 [INFO] capture — Détecteur d'actions adverses activé
+2026-03-31 21:11:50,345 [INFO] capture — Boucle de capture démarrée (intervalle : 1.5s)
+2026-03-31 21:11:50,366 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:11:50,370 [INFO] overlay — HUD démarré. Raccourcis : Esc=quitter, Ctrl+H=minimize, Ctrl+O=opacité
+2026-03-31 21:11:50,386 [INFO] capture — Board (templates) : []
+2026-03-31 21:11:50,739 [INFO] capture — Pot : 0.0
+2026-03-31 21:11:50,926 [INFO] capture — Stack : 0.0
+2026-03-31 21:11:51,134 [INFO] capture — Mise courante : 6.0
+2026-03-31 21:11:51,174 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:11:51,414 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:11:51,414 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:11:54,547 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:11:54,564 [INFO] capture — Board (templates) : []
+2026-03-31 21:11:54,747 [INFO] capture — Pot : 0.0
+2026-03-31 21:11:54,936 [INFO] capture — Stack : 0.0
+2026-03-31 21:11:55,176 [INFO] capture — Mise courante : 0.0
+2026-03-31 21:11:55,219 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:11:55,467 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:11:55,468 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:11:58,345 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:11:58,361 [INFO] capture — Board (templates) : []
+2026-03-31 21:11:58,534 [INFO] capture — Pot : 0.0
+2026-03-31 21:11:58,726 [INFO] capture — Stack : 0.0
+2026-03-31 21:11:58,960 [INFO] capture — Mise courante : 4.0
+2026-03-31 21:11:59,003 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:11:59,265 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:11:59,265 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
+2026-03-31 21:12:02,205 [INFO] capture — Cartes joueur (templates) : []
+2026-03-31 21:12:02,221 [INFO] capture — Board (templates) : []
+2026-03-31 21:12:02,509 [INFO] capture — Pot : 0.0
+2026-03-31 21:12:02,785 [INFO] capture — Stack : 0.0
+2026-03-31 21:12:03,009 [INFO] capture — Mise courante : 0.0
+2026-03-31 21:12:03,069 [INFO] capture — Joueurs actifs : 0
+2026-03-31 21:12:03,412 [INFO] capture — Position estimée par géométrie : BTN
+2026-03-31 21:12:03,412 [INFO] capture — Position : BTN | Dealer : False | Avantage : 1
