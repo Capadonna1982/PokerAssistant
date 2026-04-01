@@ -40,6 +40,7 @@ try:
     from capture       import PokerExtractor, GameState, run_capture_loop
     from engine        import PokerEngine, EquityResult
     from claude_client import CachedClaudeClient, PokerAdvice
+    from ai_client      import create_ai_client, PokerAIClient
     from overlay       import PokerHUD, HUDThread, DisplayData, ACTION_COLORS
     from tracker        import PokerTracker, HandRecord
     from stats_viewer   import StatsViewer
@@ -48,6 +49,7 @@ try:
     from profil_builder import ProfilBuilder, ProfileDatabase, build_opponent_profiles_context
     from bluff_detector import PatternEngine, update_engine_from_game_state
     from alerts         import create_alert_manager, AlertManager
+    from auto_new_hand  import AutoNewHandDetector
     from rapport_pdf    import generate_session_report_async
     from hand_replay    import HandReplayViewer
 except ImportError as e:
@@ -110,6 +112,11 @@ class PokerAssistant:
         hero_name:         str   = "",
         hh_folder:         str   = "",
         import_hh:         bool  = False,
+        provider:          str   = "auto",
+        openai_key:        str   = "",
+        azure_key:         str   = "",
+        azure_endpoint:    str   = "",
+        azure_deploy:      str   = "",
     ):
         self.capture_interval = capture_interval
         self.debug_capture    = debug_capture
@@ -133,8 +140,20 @@ class PokerAssistant:
         log.info(f"  ✓ engine.py         — PokerEngine prêt ({simulations} simulations MC)")
 
         # Module 3 — Claude
-        self.claude = CachedClaudeClient(api_key=api_key)
-        log.info("  ✓ claude_client.py  — CachedClaudeClient prêt")
+        # Créer le client IA (Claude / OpenAI / Copilot selon provider)
+        try:
+            self.claude = create_ai_client(
+                provider       = provider,
+                claude_key     = api_key,
+                openai_key     = openai_key,
+                azure_key      = azure_key,
+                azure_endpoint = azure_endpoint,
+                azure_deploy   = azure_deploy,
+            )
+            log.info(f"  ✓ ai_client.py      — {self.claude.active_provider} prêt")
+        except Exception as e:
+            log.warning(f"ai_client non disponible ({e}) — fallback CachedClaudeClient")
+            self.claude = CachedClaudeClient(api_key=api_key)
 
         # Module 4 — HUD
         self.hud_thread = HUDThread(x=hud_x, y=hud_y)
@@ -196,6 +215,19 @@ class PokerAssistant:
         except Exception as e:
             self.alerter = None
             log.warning(f"AlertManager non disponible : {e}")
+
+        # Module 10 — Détection automatique nouvelle main
+        try:
+            self._auto_detector = AutoNewHandDetector(
+                callback       = self.new_hand,
+                min_interval_s = 6.0,
+                hand_timeout_s = 90.0,
+                enabled        = True,
+            )
+            log.info("  ✓ auto_new_hand.py  — AutoNewHandDetector actif")
+        except Exception as e:
+            self._auto_detector = None
+            log.warning(f"AutoNewHandDetector non disponible : {e}")
 
         # État de la main en cours
         self._current_hand_id:    int   = 0
@@ -288,6 +320,10 @@ class PokerAssistant:
 
     def _process_state(self, state: GameState) -> None:
         """Traite un seul GameState : engine → Claude → HUD."""
+
+        # Détection automatique nouvelle main
+        if self._auto_detector:
+            self._auto_detector.update(state)
 
         # Valider les données minimales
         if not state.player_cards or len(state.player_cards) < 2:
@@ -432,7 +468,7 @@ class PokerAssistant:
         self.claude.new_hand()
         self._current_hand_id    = 0
         self._current_hand_cards = []
-        self._hand_history       = []   # effacer l'historique
+        self._hand_history       = []
         self._stats["hands"] += 1
         log.info(f"Nouvelle main #{self._stats['hands']} — contexte réinitialisé.")
         if self.alerter:
@@ -551,11 +587,25 @@ class PokerAssistant:
             try:
                 cmd = input().strip().lower()
                 if cmd == "n":
-                    self.new_hand()
+                    if self._auto_detector:
+                        self._auto_detector.force("commande console")
+                    else:
+                        self.new_hand()
                     print("  ✓ Nouvelle main — contexte réinitialisé.")
                 elif cmd == "end":
                     _shutdown_event.set()
                     self.hud_thread.hud.stop()
+                elif cmd == "provider":
+                    prov = getattr(self.claude, "active_provider", "Claude")
+                    print(f"  Provider actif : {prov}")
+                elif cmd in ("auto on", "auto off"):
+                    if self._auto_detector:
+                        self._auto_detector.enabled = (cmd == "auto on")
+                        state = "activée" if self._auto_detector.enabled else "désactivée"
+                        print(f"  Détection auto : {state}")
+                elif cmd == "auto status":
+                    if self._auto_detector:
+                        print(f"  {self._auto_detector.status_str()}")
                 elif cmd == "stats":
                     threading.Thread(
                         target=lambda: StatsViewer(self.tracker).run(),
@@ -624,6 +674,7 @@ class PokerAssistant:
                     print("  Commandes : 'n'=nouvelle main | 'end'=quitter | 'stats'=dashboard")
                     print("              'p NOM'=profil | 'top'=top 10 | 'pdf'=rapport PDF | 'replay'=rejouer mains")
                     print("              'sound on/off/test'=alertes | 'patterns NOM'=bluff patterns")
+                    print("              'auto on/off'=détection auto | 'auto status'=état détection")
             except EOFError:
                 break
             except Exception as e:
@@ -820,6 +871,17 @@ def parse_args() -> argparse.Namespace:
                    help="Générer les templates de détection de cartes")
     p.add_argument("--hero",          type=str, default="",
                    help="Pseudo PokerStars du joueur (pour import Hand History)")
+    p.add_argument("--provider",      type=str, default="auto",
+                   choices=["auto","claude","openai","copilot","heuristic"],
+                   help="Provider IA : auto (défaut), claude, openai, copilot, heuristic")
+    p.add_argument("--openai-key",    type=str, default=None,
+                   help="Clé API OpenAI (ou variable OPENAI_API_KEY)")
+    p.add_argument("--azure-key",     type=str, default=None,
+                   help="Clé Azure OpenAI pour Copilot (ou AZURE_OPENAI_API_KEY)")
+    p.add_argument("--azure-url",     type=str, default=None,
+                   help="Endpoint Azure OpenAI (ou AZURE_OPENAI_ENDPOINT)")
+    p.add_argument("--azure-deploy",  type=str, default=None,
+                   help="Déploiement Azure (ou AZURE_OPENAI_DEPLOYMENT, défaut: gpt-4o)")
     p.add_argument("--hh-folder",     type=str, default=None,
                    help="Dossier HandHistory (détecté auto si absent)")
     p.add_argument("--import-hh",     action="store_true",
@@ -883,6 +945,11 @@ def main() -> None:
         hero_name        = args.hero,
         hh_folder        = args.hh_folder or "",
         import_hh        = args.import_hh,
+        provider         = args.provider,
+        openai_key       = args.openai_key  or "",
+        azure_key        = args.azure_key   or "",
+        azure_endpoint   = args.azure_url   or "",
+        azure_deploy     = args.azure_deploy or "",
     )
     assistant.run()
 
